@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="/assets/fav-icon-BRS2KYL_.webp" />
+  <title>BreathWell Pulmonary Clinic</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/main-DDDg6fJP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-COiUF8Dr.css">
+</head>
+
+<body class="bg-white text-dark font-sans antialiased overflow-x-hidden min-h-screen">
+
+  <!-- ==========================================================================
+       STICKY HEADER WITH SINGLE UNIFIED NAVBAR (Desktop Inline + Mobile Offcanvas)
+       ========================================================================== -->
+  <header id="mainHeader"
+    class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm transition-all duration-300">
+
+    <!-- Mobile Drawer Backdrop Overlay (Inside Header Stacking Context at z-40) -->
+    <div id="navbarBackdrop"
+      class="fixed inset-0 bg-dark-bg/60 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden">
+    </div>
+
+    <!-- Global 1200px Container -->
+    <div class="site-container relative z-50">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- 1. Logo (Left) -->
+        <a href="#" class="flex items-center shrink-0">
+          <img src="/assets/site-header-logo-B2GWFEI7.webp" alt="BreathWell Pulmonary Clinic"
+            class="h-10 sm:h-12 w-auto object-contain" />
+        </a>
+
+        <!-- 2. Single Unified Nav Menu (Ek Hi Nav Menu For Desktop, Tablet & Mobile) -->
+        <nav id="navbarMenu" class="
+          fixed inset-y-0 right-0 h-full w-[290px] sm:w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-5 sm:p-6 overflow-y-auto
+          lg:static lg:h-auto lg:w-auto lg:max-w-none lg:bg-transparent lg:shadow-none lg:z-auto lg:transform-none lg:transition-none lg:flex-row lg:items-center lg:gap-8 lg:p-0 lg:overflow-visible
+        ">
+
+          <!-- Mobile-Only Drawer Header (Logo + Close Button) -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100 lg:hidden">
+            <img src="/assets/site-header-logo-B2GWFEI7.webp" alt="BreathWell Pulmonary Clinic"
+              class="h-8 sm:h-9 w-auto object-contain" />
+            <button id="closeNavbarBtn" type="button" aria-label="Close Menu"
+              class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 text-muted hover:text-dark flex items-center justify-center transition-colors cursor-pointer">
+              <i class="ti ti-x text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Single Nav Links List (Desktop & Mobile Shared) -->
+          <ul class="flex flex-col lg:flex-row lg:items-center gap-1.5 lg:gap-8 mt-4 mb-2 lg:my-0">
+            <li>
+              <a href="#home"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-primary bg-lightBlue/40 lg:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/service.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                Service
+              </a>
+            </li>
+
+            <!-- Pages Dropdown Menu -->
+            <li class="relative group" id="pagesDropdown">
+              <button id="pagesToggleBtn" type="button"
+                class="flex items-center justify-between w-full lg:w-auto px-3.5 py-2.5 lg:p-0 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:font-sans lg:font-medium lg:text-[16px] gap-1.5 focus:outline-none cursor-pointer transition-colors">
+                <span>Pages</span>
+                <i id="pagesArrow"
+                  class="ti ti-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+
+              <!-- Dropdown Box (Hover on Desktop + Click Toggle) -->
+              <div id="pagesDropdownMenu"
+                class="hidden lg:block lg:invisible lg:opacity-0 lg:translate-y-2 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:absolute lg:top-full lg:left-0 lg:w-48 bg-slate-50 lg:bg-white rounded-lg lg:rounded-xl border border-slate-100 dropdown-shadow py-1.5 px-1 lg:py-2 lg:px-0 mt-1 lg:mt-2 transition-all duration-200 z-50">
+                <a href="/team.html"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Our
+                  Doctors</a>
+                <a href="#testimonials"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Testimonials</a>
+                <a href="#faq"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">FAQ</a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Mobile-Only Drawer Bottom Button -->
+          <div class="pt-4 mt-2 border-t border-slate-100 lg:hidden">
+            <a href="/contact.html" class="btn-primary w-full text-center py-3 px-6 font-medium shadow-sm">
+              Contact
+            </a>
+          </div>
+
+        </nav>
+
+        <!-- 3. Desktop Action Button & Mobile Hamburger Toggle -->
+        <div class="flex items-center gap-3">
+          <!-- Desktop Contact Button -->
+          <a href="/contact.html" class="hidden lg:inline-flex btn-primary">
+            Contact
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button (lg:hidden) -->
+          <button id="openNavbarBtn" type="button" aria-label="Open Mobile Menu"
+            class="lg:hidden w-10 h-10 rounded-lg bg-lightGray hover:bg-lightBlue text-dark hover:text-primary flex items-center justify-center transition-colors focus:outline-none cursor-pointer">
+            <i class="ti ti-menu-2 text-2xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (Exact Design from Screenshot)
+       ========================================================================== -->
+  <section class="section-padding bg-lightGray overflow-hidden">
+    <div class="site-container">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Column: Content -->
+        <div class="lg:col-span-7">
+
+          <!-- Top Pill Badge -->
+          <div
+            class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+            <span class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs shrink-0">
+              <img src="data:image/webp;base64,UklGRhQEAABXRUJQVlA4WAoAAAAwAAAAIwAAIwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI5QAAAA2AUGtb3uaVgITPQeOgn4MkCggK2ipIo6CnCgAFyxwwB6mCfXPANOSPDwURMQE4TN2FjUEW+U6CsoMlbBqiliWGAuxxki1P4YQZG5ynMU/5CHmUvdte9sijNHknW+YL5enl8sYIzaadVoNRwX1JAEYoewcM0CYOsGqwkUiPfxkV9m0NF6qBqzCmClSZTQW5Cvm5VvC3NBXMc1dBEmG1BESrFoHApCQJgPNKEwCkz03ljc1n1yhI2MruRcXEYVecp0LLAwelH25F3jMO5+f/SKfE4XSY2PKhFBNKhijcEhnknD4zDgMAVlA4IDgBAACwCACdASokACQAPwV8tFQrp6SjJzgKSXAgiWwArDO0fOeecl/r/6cM7tpfMBjiO8y/5ksQPaiHZrcX89ZRrWiJvhwaoI+NtwlB+eQc0oAA/gxfEoZE44Ydh8YgNYOFQzURGMZ1hWm3LTc3918pQJhbO/ckqmUM22Mk3ncpgid0vaEUuy5R9X1JUSGdzJb5RW98Is1gp3Qff7zzpDK/ecobC5o7hPX/yceII3EphZqGMRyogGKbAUOrTzmWYcoBzrMd97U2XAFS9WEK8w9hgyxO+1Z/V7uwPRcj7S+wwO/o3QOHpQlEr3n9QpqY5bpWpBz0dil7A5H38By789/BxRsDqevW3hHlavOWduf+FM9arF5INnz+TQlZfD5Jwtqx3NXPc+MaeG1F+PhM5S/8ZOJb/JeBFlwAAAA=" alt="lungs">
+            </span>
+            <span class="text-xs sm:text-sm font-medium text-dark font-sans">
+              Breathe Easier. Live Healthier.
+            </span>
+          </div>
+
+          <!-- Main Heading (Plus Jakarta Sans Bold 64px auto-responsive) -->
+          <h1 class="mb-5">
+            Expert Pulmonary Care for Every Breath You Take
+          </h1>
+
+          <!-- Paragraph (Inter Regular #6D6D6D) -->
+          <p class="max-w-xl mb-8">
+            Whether you're managing asthma, COPD, sleep apnea, or other respiratory conditions, our experienced
+            pulmonary specialists provide advanced diagnosis and personalized treatment plans to help you breathe with
+            confidence.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <a href="/appointment.html" class="btn-primary w-full sm:w-auto text-center">
+              Book an Appointment
+            </a>
+            <a href="#services" class="btn-secondary w-full sm:w-auto text-center">
+              Explore Our Services
+            </a>
+          </div>
+
+          <!-- Features Grid (2x2) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 font-sans">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs shrink-0">
+                <i class="ti ti-check text-xs"></i>
+              </span>
+              <span class="text-sm font-medium text-dark">Board-Certified Pulmonary Specialists</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs shrink-0">
+                <i class="ti ti-check text-xs"></i>
+              </span>
+              <span class="text-sm font-medium text-dark">Same Week Appointments</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs shrink-0">
+                <i class="ti ti-check text-xs"></i>
+              </span>
+              <span class="text-sm font-medium text-dark">Advanced Lung Function Testing</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span
+                class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs shrink-0">
+                <i class="ti ti-check text-xs"></i>
+              </span>
+              <span class="text-sm font-medium text-dark">Most Insurance Plans Accepted</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Hero Image with Floating Review Badge -->
+        <div class="lg:col-span-5">
+          <div class="relative w-full max-w-md lg:max-w-none mx-auto">
+
+            <!-- Main Doctor & Patient Image -->
+            <img src="/assets/hero-right-img-BfvlHKzM.webp" alt="Pulmonary examination with specialist"
+              class="w-full h-auto object-cover rounded-3xl shadow-lg" />
+
+            <!-- Floating Over 10,000+ Lives Card (Bottom Right Corner) -->
+            <div
+              class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white rounded-2xl p-4 sm:p-5 shadow-xl border border-slate-100 max-w-[220px] sm:max-w-[240px]">
+
+              <!-- Overlapping Circular Avatars Row -->
+              <div class="flex items-center">
+                <img src="data:image/webp;base64,UklGRmYFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCB0AgAAEAwAnQEqKAAoAD5tNJVIJCMiISc4CSCADYlmALEficaBHEBr6uBRt3Ls3UDs5ucBK0hnPkGzVesgQJLfzvONqvWKZESZl2TMOIcb1PetH5s79u8/dL20NfXSw42B4E2OJ5HuqoAJjGjoAP76qOjyjzDEDXxHV0FXCe6hrWcc8XlSeNL3bY372x7w0DA/n8KdbgVqVhSeZBtZ1LMsNN6V6B3v71Wkn8ndMjC1Oi7nq4X4sSLmgFSTqbD1m0P9pVND1EbmCrVJDqDpfK74yqRqV6YhbsPnCwttlchIEomN7FyMvQVFdWf3Be28I1epJrLHe2RijgpVILIOsQUJ1e9yu6or413H6DDPuUvoA+v0zxj7q6xaLWak563Q7SnvU+DQUwQq0MOGRdHX5uWz2yKZd+ZjS6+fhYWG/zJEA7zJPKO0ooXO5mKFrlnJ89ZAiYaXPfymj4Td9iJ/H7z8382UD1ZOSXjNHHv7GKn8EoQbaLaJJEDEj8IUnstuZdIMPkFRueU0cSOA6egFLD6GIz/frLIsQPPEcCdLCZNcchCeht8Qlsp2+L8RrzaAPDaFS5TotktZI0rTOKb3OeEp7lgoSkQefDvR3cgOidivzQMnRO4e40/7GOmZQ6nw6a3xfzBs3llv9jJVf9e61Hjx9RxN/7qxrc8YO9f3/mZ3mpfy/2fzs+7ubXf2P/i1k1v6TB9DG/+TkZBa0S4CQSxnrz8B1TnWFLARywr/Z3LS29uUp2syZ4P+IOPpeq7/+Lm76IOL+PZS/HYvL7vcmEFD2+AeSITkNZlHSbU/Umv/3X/3f3/8q+f/27t68f95/x+a0/O4YQ7AAA==" alt="Patient review"
+                  class="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                <img src="data:image/webp;base64,UklGRkYFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBUAgAAMAwAnQEqKAAoAD5pKpBFpCKhmOzOAEAGhKAK2bwguaCXeVYFJ7nro8EdKzi79FTQ2zT8set8VrBYBC9JxTaFFTDbpBzHT5QzAHPEe/33ObDiQDKFdkR1Ac00P5iPIF7tt+e23rcfXgBHgAD+9whh3JN65douvYNB3pK0hpwN/5nM/sW/cLPWdXfoHGp/D5eTUbUoz+5d9dDOLSv7147n3xAfLZ/5Qm/EXI2lzt5MDiX743NwIU9JNGaduai/2aLj2aR3sTsTS/M4jjIDdRCSn/sipUaR0kTSGIVf4D6k+/7uLlvyeNghGFqXnh1/gMsKiICTxX6gl0bW0hQaUTtFsii4gy7lzft0NurlBEmEaHPu9Sun9KfLQIuAejeOp8ZwTYaLhPNK1+FDM5YZ/nu/EKs3dP80tgbqnUAi/2d/OTRNieTMbM7S7wtQcMFCjymNdj6mfL2GUhYLhdsHchERhHMvssoB/xbOFpTIrLLC1Z2+PZ99whCR5x0+Nq5nVtm4Vow4DI75ffHdpP9IXNrCEutTBEW8HK76NHh/wBtsg6YL9E1XUrCPGiN2oo4ja8heEl8LsEVezcfFPC+KqzyJUyE8qSmHhuinRdHKvzmKpNdUymSJ4WsVC2MG88yuP+YCDspjJqi9EKwU53A3COz3nPrCX+1+yIVLAUqBD6kDzNDuxoMc+ozP5RoCEsyp9zputlqa+DL+WsRG1BwRsPWieUjIIfY2eG8oAfhTrgkVSKyksFMzE79/uoWyhZCCI2Y78RScV3b8lKRzH97J43gs8G5ZMAA=" alt="Patient review"
+                  class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2.5" />
+                <img src="data:image/webp;base64,UklGRsgEAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCDWAQAAkAkAnQEqKAAoAD5tLpJGJCKhoSctsIANiWUAyI9+9oESlWoYO25v6dMSBCsswHBX/WkeQf0vXNm+mjuL/fvjmLVQLKwYo2uLZ7sxsCwAYqf0kYMsAAD+/fkXSpCTI6IsYZpHVpKj2O+u/0dlcu84d5TCVX+7L3eU/SBZiGjeYvmX1k8yGVr0TO9k+Od2effbqAa/xbcL6YSFmBb83FIbX6xRTc2fn/Ln67c0T+vMBzd26/pAb50m3+hz/CCoKnQY+vPqSIAtFIXemStD1RvYVmtf4AucI5TvjxlS8dLcVbYv5gB5WhbJ4x7a5Bkt+2YEqvB9yiP1JJVqtPSSDWnn7zfxOfelfLGIb5ZSCh90kyaAw/j4QE+/XJdz4ACF6zs8adz1gm/Ob6nvgM/rISZcumno+zkokc1eh0WsBGJiqhpBVG8PVdI6Z0avr6rdCWv8GjcqF/fZFzJk8I1aSpM5ygXB29GcYsaiX8FLaJDpSlLmJvbKwHWAdkXxJN72fPX0DBgJQIrdc+3/uDYhtQmZvDniKYROpX2HNuI3mR9DcfblpD3u5EvOFQur5rigxi1A2v8POjIgNMhVPX0Vt+qas5X5qR1FHGtUfnHhBJupXBwk2ipDgAA=" alt="Patient review"
+                  class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2.5" />
+                <img src="data:image/webp;base64,UklGRkwFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBaAgAAcAsAnQEqKAAoAD5tKpFFpCKhmOme/EAGxLUAWX/smxhO+eIsniZEGt7RpqUq1u2LUF6TqnEKyW2tWvbokBJt/wjfWtXyEU0XB4UkTREk0U+Jo3GhtOtnift+Sy3eHlPHDWiBAAD+/mCk8TCo8w312r994yHIPCdelNgZUfROin9AhE6Ut26kVo/upaZ75fJMjbiosRdwcYSWrFcD0GGU2EbOCTxsj/GrC+thlZeWQeSMyG84vY04Q2WQAKlIfhELCLFMZ8NhoFEF5AAnN9WQHZCMMseUdNYUgw+AboC7GWWznd9ea6AMb9XUOq8mIL6j/EdTLdlNbD2M+xgjAUPjxAurd1WlBosdS/Qvu+CDpgKJtvMWQNlF1ts8jJd/3OZvSHjy/1+xzTXwZvu1QBxLHb47V5IVw3qxkwls+bMSYXtwzcvrJTkQAflSrym862LlYafa/eSgR2KdepwvBgkEv3OKl8kdqgw4fZwP66Ab4xxio/5jQRChr8qZRfK12QQEc0b8as6/WlwiKza4wmb1DhKKGcbVn4BNLPOt94rzyv6f53/M9KCXSkt9H+MgAnyzOfUzPM9BFVsLheDvq9hq2C1XMw5/6bujU6UWP+y0Md5gwdggrkSkf3e7PQW93Q72Pm6z4+RzbQj0p6cooOtTY9UCaF5uvb7ZufbnhOBpm2GhUW5ePXW5RP+6sc6+l5TrvlxTb4vUFHYLq/wHo8LjPP9yox98gyoCDnX7QpdgtdomHd9fq9gVANBjLARRTKID3FNf+4LmEIRJkNFX3X/r/4oNSXgy41vVeAA=" alt="Patient review"
+                  class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2.5" />
+                <img src="data:image/webp;base64,UklGRjoFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBIAgAA0AsAnQEqKAAoAD5tNJZIpCKiISOJAIANiWUAtkewoOqXO+9/Nv/jPUPzx/T3/B9wf9Wd8l/ZUUov0p/0RLwTTEelfCjKR/2EvzMe13JRoOaVS7SNYN7FbPWttEy8JTS+cUAD2oKZgAD+83Uit7elo0PJ8NgZ0c9i2hF4j3/wy/5bYLhwNT9Yz8UFKNZKeR8itHw+85JVK00aXIHJTzHK7Cy7VUOJ5jtrrOrLZeH+dcXBdAg+4hGsyVf/gfdo6iZRBboTl8wKYSLj+NbMGR0jUtPortO88RK+5ku/1iuSOyEgA7D+TwrzMp8CkXK1upwdB/rHL6W7dNcWpT67tuoFQ04XV4bOVr+qm7odbTuSAVJiGuh1o+1Ko5kFI4GOqtsvxXUOIC5JJfmgXCrrjO/ItLup/sW4HnA5zBxEqjr5Z9fF941HX69F5fHaa7jnOltl+V7rl/f358g1ZTk3U/o2QoR1J+F0uw/M4TMxSYUOasQl7wjallt9bW1itExTDLZ7YB9xZj3TsjzQRTc5S46Pak+asvPzFSWULb81UuayMApYPwuqQuZQp3ifYP/DX0A8aesmmOWB15eG4PZdOK5qlqKIf4JEMmng2anAxSEaatFN9c8SKR32j4WY39J5hIEpQC1UUuZuf872Omlwp3An0fZb3z8cgBjoNthPlTUAzPu2Rnbh1b/gbCA28+ZAhq+H7Zdt9P1vIs8labCWdn8LKz/4ua9kzkJjJ4rxylb4AdbcQFdYMxg2G45FPIB2v7oLnkA7AN1oAAA=" alt="Patient review"
+                  class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2.5" />
+                <span
+                  class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold border-2 border-white -ml-2.5 shrink-0">
+                  <i class="ti ti-plus text-xs"></i>
+                </span>
+              </div>
+
+              <!-- Text Content -->
+              <div class="mt-2.5 font-sans">
+                <span class="block text-xs sm:text-sm font-bold text-dark leading-snug">
+                  Over 10,000+ Lives
+                </span>
+                <span class="block text-xs sm:text-sm text-dark leading-snug">
+                  Breathing Better
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RESPIRATORY SERVICES SECTION (With Responsive Cards & Figma Hover State)
+       ========================================================================== -->
+  <section id="services" class="section-padding bg-white">
+    <div class="site-container">
+
+      <!-- Section Header: Title (Left) + Description & View More (Right) -->
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-12 lg:mb-16">
+        <div>
+          <h2>Respiratory Services</h2>
+        </div>
+        <div class="flex flex-col items-start gap-4 max-w-md">
+          <p class="mb-0">
+            Comprehensive respiratory care tailored to improve your breathing, lung health, and overall quality of life.
+          </p>
+          <a href="#services"
+            class="btn-secondary w-full sm:w-auto text-center py-3 px-6 sm:py-3.5 sm:px-7">
+            View More
+          </a>
+        </div>
+      </div>
+
+      <!-- Services 6-Cards Grid: 3 Columns Desktop, 2 Columns Tablet, 1 Column Mobile -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Card 1: Asthma Management -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRqYDAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIigEAAA2QkG2blkpPhDGB4ykgDQ5uAWELAAnUBEqBFRMsJAATOCbwo8A6J4GfCfaHn9kIETEBBOeZxXgpPaGxCvG5/lajJn+6MiDekqvbKIB25d7o2M26AtBUmFvlthrE16i1glscy1l0t0YHv2vdpbCvfpR+jt7zDjCp08fyC/ZyRN6djCG5AD729NELYBUly9vBGjfw6zegkUdjGSBeF89O7YFpv37jIx3Jna/ewg0B24/EHv1ciAK0l64DtQrbYkr262QD1BfAHl0H1lSDoVL8XH7RlgJosgDTrhj1sfORAjSvpgZtzqVpS8YPTwut9DQP8QBVZ7PyMSGpxVkP1Sll9PC7eDHTM6rpU+81WIfjf/pN/KvZJWIVDYq8gkvaIsGfbmmI3ZW7vkt8CnAq8jrgWNg8sdmK0VNM4PX1XNGmjPtYdV6X1OS1n8Ak9Ty238k+qCuBOCsk6wNMRwkYZSh7F5CSOGVaDcHZBThakBp0+RViHHBVsJ/QR68QK4AomAgwGsITNI/A6xm9KwBWUDggJgAAANACAJ0BKh4AHgA/SZ7GW7Arp6QoCAIAKQlpAAA9o6AA/u8kQAAA" alt="Asthma Management" class="service-icon" />
+            </div>
+            <h4>Asthma Management</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              Personalized asthma treatment plans designed to reduce symptoms and improve daily breathing.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+        <!-- Card 2: COPD Treatment -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRhIEAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIvwEAAAmQkG3blFhPg/OZwN8EQIKBBGICIAGYAEmAJgATLAn4TeA/CfxM4DcJzuJytgIRMQG8P6ylXvPny3LZ8Df7Lf+tPMifyzEl/nOtKqGXP1JO3+9kySKT+/dL+Ttu6s97qvp6qVd2PLeTe8tNkozL/VDu9s1hl24zN7l3DmTa2tJkHEWi0GhihzdayUxyoyKOWeXnQmwl/Qu36RSndEHjOPj9BzlaNemzYRzJNdkfCc4ZY+ppxPv2SZp2iKb1GPP1TRTvaQthnaYPxUmRu5wN1M1vsMstUYIvHvIRKfIxxMpzJb620OUCqRzd1JziVl85m+02rQRiyP326jDZGM+lFQts7mnIIfoc9dManhscBOpRR//pQLR212TrmIPTrznZmvnuTFlqBGJOZ0ZLBfObzWCJn3qHGI9ZF7mJXdsgFiL60vtVlanx0rWnpOkKiYO6NM/iLzHZ1w8mfFjpjU0S44Ox8GLeVHAK6qRczzxAccJCAT7KJV56+YJbZMloAK48Qlc6qrgueroowDGVIGk/DMNlN4LfT4dWXd4lpB58uAzXgwPWDUDZ3dAj9XBQD6xOdItVVVUjT8emqlaLzs4ZAABWUDggXAAAAJADAJ0BKh4AHgA+bS6SRiQioaGwGAgAgA2JZQC+SBfF4OUFiYAA/vpMfC4a/53GB4yHCNj5ILEZjAdC1PDmQBZSHTTOf+LAvkTi5xJNy/F6Pv/PW07cd685bgAA" alt="COPD Treatment" class="service-icon" />
+            </div>
+            <h4>COPD Treatment</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              Comprehensive care to help patients manage Chronic Obstructive Pulmonary Disease with confidence.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+        <!-- Card 3: Sleep Apnea Testing -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRiwEAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI2wEAAA2QUG173TZvEVRFEBVB7BGoisAJAjsI7AzAbCOwgsAygVwQVEJQZwAWhcD2B8EudrpCiIgJAArN50YHUDxuP6l+skD9zH2lVBRglRHc+bID45k3WRFHSbQf8nHN3qTKeFbbGd37rQFEFT/c8EZ6MNvGs9xNTL21zEZvwuO596djVQcSB+g65aPC4RUWoYiJB3hbM2vwELor/fB7Q0z0JPEjSoCVF7D+VyrdQ8U51wHQHvrBQ2Z2Edm4b4lLISYqAkpAeyjd6bKWVe2+NACiEcBXo46R/OmZW2OzjSvHYaKYRrWwtsr8Mxz7auhNdo7M6ggKL0o2HohXf0EqrwR0jIlA11bCvDSAba1tQI2SREhKwL1grug3ThXiDgEWwZdnOHV+pAgA8RVQKnOAPopSQtPug+WjVdY2oIiE4gjVQ38GXWtiG2G5BjAOfB0A34xCvbMUhwqtm0n2FY52FJBT16IcSH4j3zFdFSDnxgLWa9teDJJS3vSkdADN+5FpqdYpiOoeeFeATydxPc7Q/JSI1q0W/lcVS3AyaMZyUSmCjx9J+t0QYak8RgKort6O93SXMg2XwMsakOPtspE7lWXWt/bxldnx3Ng7y+/5DNHecjNDn453dnky9+HrAQAAVlA4IFoAAACQAwCdASoeAB4APm0wk0ckIqGhKAqogA2JYwCdG0ktsUBRoRQAAP750rzn+kbnSonOngl30FSn9ZpQZuV1O86exdxuEasDaA4T8IL2Sy48odoNN0BE/XOBwAA=" alt="Sleep Apnea Testing" class="service-icon" />
+            </div>
+            <h4>Sleep Apnea Testing</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              Advanced sleep evaluations and CPAP therapy recommendations for better sleep quality.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+        <!-- Card 4: Lung Function Testing -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRugDAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIlAEAAAmQlm171UiPg8komA8FExSUKCgoaKoAqgBQ0FYBrQJ2FCRVAFXANw6yCk497a/9HRETwNO+LAnnE/9a3gDhP9I0Y/CP/Bi8PGWX9vs6fNyTIV3bYJ+QcM6ahuwB2yY7B/vAhB9NgmRukuG2O4/mXs1ORlC7ucL1084wmo7mjnR9sgV81RzgIPsLlGXatnLTxpNZGcMnlYqkKv1CsBJjC4jvmQpth8Lpfln2s/PtRteB3htoNFLl26Z0TKXLyyW5pttlFTE2sO5hZpXcaprzOOe6rF0SZrhssBIB7Lxv9JogXdSPcQ1wkg+rCog1ySl31V2sNYBqtbpCMUzklfJQfcY0WLh8ykwdjF55MSYzNagVxR8q1Vd+fld9jRpRdj02vaIrDltUgJhKqf1zZW2KFLlfDP1x8M9047EfPQ+Hc9e9nxC9SdZ071133BsgGcgaSBKIN6c0SoLuPWHSXHBbhAWnN8mZZRBu1/PXBpAQcE65q7mTZRCgOJ9oy3YyzkWejC4vQlPsJaatH4tjHnlxzvo6+J0CVlA4IF4AAABQAwCdASoeAB4APm0ylkekIqIhKAgAgA2JZQC7GaAARVmUAAD++eZDQ/VXmfo+c60qViMBZgrxjvlwL0AU1yTxhA1XvuSFxBdZSzJ1LADZkwarPfD2yL+SFmCukoQA" alt="Lung Function Testing" class="service-icon" />
+            </div>
+            <h4>Lung Function Testing</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              State-of-the-art pulmonary diagnostics including spirometry and respiratory assessments.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+        <!-- Card 5: Smoking Cessation Programs -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRqQDAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIVgEAAAWQkG171lbPFCwO9jkoDkgVAApKFEAUAArKFAQU0CqAKVjrICg4cXB+ygjHQURMANuC53CpEo/weTum0tYDUr7bI5ry7HnVkpo4aTpnPEzFLa/DEOU6L854hrk0fj5HTQWIM57ZOFNf1wh17UqQdCS9B3i/b4TwQzPmvTPKWT97o7Pwop7tlp8699ALIovuhnYJOTwe5Q9MRvGqnF2YirmDyu7Qmd1AnNHS1hlgdtB/jxuI48ym7KH/1W3oZhiPoLw8npwkua2oF7/sg0RUVtQno3kNIQYYShC/gRyilR6Uuow38mztQ9RwOpcq7ap7FvLuZKIUAcTZuajup5U+StU15OlXugbVT9ZHzJirgsTIQEDndYTIAuiLGA9IYyLYVM5eC4Dvz1vY87FFMqz0oJsxK3bsbX+PgeatDZM5hDILuR3k+tUfA0lldGMfHN6mzzbwH8UDAFZQOCBYAAAAUAMAnQEqHgAeAD5tKpNGpCIhoTAYCACADYljAJ0AGFRyMAAA/vnSyNc6DJ22B1ehv/8V17znlsJR76HZY9aFkqS/n3//Omr1Qg7ETFvxQH3wkqUyzwAAAA==" alt="Smoking Cessation Programs"
+                class="service-icon" />
+            </div>
+            <h4>Smoking Cessation Programs</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              Professional guidance and customized treatment plans to help you quit smoking successfully.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+        <!-- Card 6: Pulmonary Rehabilitation -->
+        <div class="service-card group">
+          <div>
+            <div class="service-icon-box">
+              <img src="data:image/webp;base64,UklGRpYDAABXRUJQVlA4WAoAAAAwAAAAHQAAHQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBISgEAAAGQUFtv3kgPghhUEAJBEMxgxGDEIGIQM1AYqAy8DAbCQCiINPsPICImgL9ZMuVP6JyPP5L5H9Lj0Ds9Dv2Fj1Zdd0v18J/aEzjlpoDcf2IPMJqfGJD7zUj4dArMp10sYdobWcDUy9TV0GgBJZfdqLGWlvb2ObeppdXWWF4KYoqerymfmaHn9ylEQgPDoQCe1g7e2gANYTAVEtDvFADNlwIBMqEBxKKL2zPdBKAu2rV8UVj32c7J8j5KOZBCRISmz4gq92pOVFQ4ZUsAGcnLlon4Gi8iuMZjDLbo6WW5lEy00vCzQvERxtoKanqIPdskxgRyNFtMkUHBKDerTU8zr8vDRGYDF04f2zPih9l4vgFqXq4xCr6+oNy57eeN1cpAlY/s3m7OfrdP8T0romMfmvu7zmFHVQcwlrt5GRBVdZhNPJR7izDu1YM/DVZQOCBWAAAA0AMAnQEqHgAeAD5tLpJGpCKhoTAYCACADYljAK4t/+AmPwqjGdEAAP750PlvLpieHVqygXczOANE1PmAIOAR6OXwnihpz1iT+j6gPEQdJ4BfK6R0AAA=" alt="Pulmonary Rehabilitation"
+                class="service-icon" />
+            </div>
+            <h4>Pulmonary Rehabilitation</h4>
+            <p class="text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-[20px] md:mb-[30px] lg:mb-[45px]">
+              Therapeutic programs focused on improving breathing capacity and overall lung function.
+            </p>
+          </div>
+          <a href="/service-details.html" class="service-link">
+            <i
+              class="ti ti-corner-down-right text-base text-dark group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"></i>
+            <span>View Details</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT SECTION (Exact Design from Figma / Screenshot)
+       ========================================================================== -->
+  <section id="about" class="section-padding bg-dark-bg overflow-hidden">
+    <div class="site-container">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- Left Column: Heading + First Image (4 Cols on lg) -->
+        <div class="lg:col-span-4 flex flex-col">
+          <h2 class="mb-6 lg:mb-8">About</h2>
+          <div class="overflow-hidden rounded-[5px]">
+            <img src="/assets/about-img-first-3uRv1ISa.webp" alt="Pulmonary Care Specialist"
+              class="w-full h-auto object-cover rounded-[5px]" />
+          </div>
+        </div>
+
+        <!-- Right Column: Top Description + Subgrid (8 Cols on lg) -->
+        <div class="lg:col-span-8">
+          <!-- Top Description Paragraph -->
+          <p class="leading-relaxed mb-6 sm:mb-8">
+            At BreathWell Pulmonary Clinic, we are dedicated to improving lung health through compassionate care,
+            advanced
+            diagnostics, and evidence-based treatments. Our experienced specialists work closely with every patient to
+            create personalized treatment plans that improve breathing, enhance quality of life, and support long-term
+            respiratory wellness.
+          </p>
+
+          <!-- Bottom Subgrid: Middle Text/Button + Second Image -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
+            <!-- Middle: Text & Learn More Button -->
+            <div>
+              <p class="leading-relaxed mb-6 sm:mb-8">
+                Whether you need routine pulmonary evaluations or specialized care for chronic lung conditions, we're
+                here to help every step of the way.
+              </p>
+              <div>
+                <a href="#contact" class="btn-secondary w-full sm:w-auto text-center">
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Second Image -->
+            <div>
+              <div class="overflow-hidden rounded-[5px]">
+                <img src="/assets/about-img-second-BSVk5Ey8.webp" alt="Patient breathing easily in fresh air"
+                  class="w-full h-auto object-cover rounded-[5px]" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE BREATHWELL SECTION (Exact Figma Design & Global Tokens)
+       ========================================================================== -->
+  <section id="why-choose" class="section-padding bg-white">
+    <div class="site-container">
+
+      <!-- Section Header -->
+      <div class=" flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-12 lg:mb-16">
+        <div>
+          <h2>Why Choose BreathWell</h2>
+        </div>
+        <p class="mb-0">
+          Compassionate Care Backed by Medical Excellence
+        </p>
+      </div>
+
+      <!-- 3-Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+
+        <!-- Column 1: Experienced Specialists Card -->
+        <div
+          class="flex flex-col justify-between lg:h-[360px] bg-surface border border-slate-200/80 rounded-[5px] p-[20px] transition-all duration-300 hover:shadow-md">
+          <div>
+            <h4 class="mb-3">Experienced Specialists</h4>
+            <p class="mb-6 sm:mb-8">
+              Board-certified pulmonologists with years of clinical expertise.
+            </p>
+          </div>
+
+          <!-- Bottom: Over 10,000+ Lives Avatars -->
+          <div>
+            <div class="flex items-center">
+              <img src="data:image/webp;base64,UklGRmYFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCB0AgAAEAwAnQEqKAAoAD5tNJVIJCMiISc4CSCADYlmALEficaBHEBr6uBRt3Ls3UDs5ucBK0hnPkGzVesgQJLfzvONqvWKZESZl2TMOIcb1PetH5s79u8/dL20NfXSw42B4E2OJ5HuqoAJjGjoAP76qOjyjzDEDXxHV0FXCe6hrWcc8XlSeNL3bY372x7w0DA/n8KdbgVqVhSeZBtZ1LMsNN6V6B3v71Wkn8ndMjC1Oi7nq4X4sSLmgFSTqbD1m0P9pVND1EbmCrVJDqDpfK74yqRqV6YhbsPnCwttlchIEomN7FyMvQVFdWf3Be28I1epJrLHe2RijgpVILIOsQUJ1e9yu6or413H6DDPuUvoA+v0zxj7q6xaLWak563Q7SnvU+DQUwQq0MOGRdHX5uWz2yKZd+ZjS6+fhYWG/zJEA7zJPKO0ooXO5mKFrlnJ89ZAiYaXPfymj4Td9iJ/H7z8382UD1ZOSXjNHHv7GKn8EoQbaLaJJEDEj8IUnstuZdIMPkFRueU0cSOA6egFLD6GIz/frLIsQPPEcCdLCZNcchCeht8Qlsp2+L8RrzaAPDaFS5TotktZI0rTOKb3OeEp7lgoSkQefDvR3cgOidivzQMnRO4e40/7GOmZQ6nw6a3xfzBs3llv9jJVf9e61Hjx9RxN/7qxrc8YO9f3/mZ3mpfy/2fzs+7ubXf2P/i1k1v6TB9DG/+TkZBa0S4CQSxnrz8B1TnWFLARywr/Z3LS29uUp2syZ4P+IOPpeq7/+Lm76IOL+PZS/HYvL7vcmEFD2+AeSITkNZlHSbU/Umv/3X/3f3/8q+f/27t68f95/x+a0/O4YQ7AAA==" alt="Specialist patient"
+                class="w-8 h-8 rounded-full border-2 border-white object-cover" />
+              <img src="data:image/webp;base64,UklGRkYFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBUAgAAMAwAnQEqKAAoAD5pKpBFpCKhmOzOAEAGhKAK2bwguaCXeVYFJ7nro8EdKzi79FTQ2zT8set8VrBYBC9JxTaFFTDbpBzHT5QzAHPEe/33ObDiQDKFdkR1Ac00P5iPIF7tt+e23rcfXgBHgAD+9whh3JN65douvYNB3pK0hpwN/5nM/sW/cLPWdXfoHGp/D5eTUbUoz+5d9dDOLSv7147n3xAfLZ/5Qm/EXI2lzt5MDiX743NwIU9JNGaduai/2aLj2aR3sTsTS/M4jjIDdRCSn/sipUaR0kTSGIVf4D6k+/7uLlvyeNghGFqXnh1/gMsKiICTxX6gl0bW0hQaUTtFsii4gy7lzft0NurlBEmEaHPu9Sun9KfLQIuAejeOp8ZwTYaLhPNK1+FDM5YZ/nu/EKs3dP80tgbqnUAi/2d/OTRNieTMbM7S7wtQcMFCjymNdj6mfL2GUhYLhdsHchERhHMvssoB/xbOFpTIrLLC1Z2+PZ99whCR5x0+Nq5nVtm4Vow4DI75ffHdpP9IXNrCEutTBEW8HK76NHh/wBtsg6YL9E1XUrCPGiN2oo4ja8heEl8LsEVezcfFPC+KqzyJUyE8qSmHhuinRdHKvzmKpNdUymSJ4WsVC2MG88yuP+YCDspjJqi9EKwU53A3COz3nPrCX+1+yIVLAUqBD6kDzNDuxoMc+ozP5RoCEsyp9zputlqa+DL+WsRG1BwRsPWieUjIIfY2eG8oAfhTrgkVSKyksFMzE79/uoWyhZCCI2Y78RScV3b8lKRzH97J43gs8G5ZMAA=" alt="Specialist patient"
+                class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2" />
+              <img src="data:image/webp;base64,UklGRsgEAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCDWAQAAkAkAnQEqKAAoAD5tLpJGJCKhoSctsIANiWUAyI9+9oESlWoYO25v6dMSBCsswHBX/WkeQf0vXNm+mjuL/fvjmLVQLKwYo2uLZ7sxsCwAYqf0kYMsAAD+/fkXSpCTI6IsYZpHVpKj2O+u/0dlcu84d5TCVX+7L3eU/SBZiGjeYvmX1k8yGVr0TO9k+Od2effbqAa/xbcL6YSFmBb83FIbX6xRTc2fn/Ln67c0T+vMBzd26/pAb50m3+hz/CCoKnQY+vPqSIAtFIXemStD1RvYVmtf4AucI5TvjxlS8dLcVbYv5gB5WhbJ4x7a5Bkt+2YEqvB9yiP1JJVqtPSSDWnn7zfxOfelfLGIb5ZSCh90kyaAw/j4QE+/XJdz4ACF6zs8adz1gm/Ob6nvgM/rISZcumno+zkokc1eh0WsBGJiqhpBVG8PVdI6Z0avr6rdCWv8GjcqF/fZFzJk8I1aSpM5ygXB29GcYsaiX8FLaJDpSlLmJvbKwHWAdkXxJN72fPX0DBgJQIrdc+3/uDYhtQmZvDniKYROpX2HNuI3mR9DcfblpD3u5EvOFQur5rigxi1A2v8POjIgNMhVPX0Vt+qas5X5qR1FHGtUfnHhBJupXBwk2ipDgAA=" alt="Specialist patient"
+                class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2" />
+              <img src="data:image/webp;base64,UklGRkwFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBaAgAAcAsAnQEqKAAoAD5tKpFFpCKhmOme/EAGxLUAWX/smxhO+eIsniZEGt7RpqUq1u2LUF6TqnEKyW2tWvbokBJt/wjfWtXyEU0XB4UkTREk0U+Jo3GhtOtnift+Sy3eHlPHDWiBAAD+/mCk8TCo8w312r994yHIPCdelNgZUfROin9AhE6Ut26kVo/upaZ75fJMjbiosRdwcYSWrFcD0GGU2EbOCTxsj/GrC+thlZeWQeSMyG84vY04Q2WQAKlIfhELCLFMZ8NhoFEF5AAnN9WQHZCMMseUdNYUgw+AboC7GWWznd9ea6AMb9XUOq8mIL6j/EdTLdlNbD2M+xgjAUPjxAurd1WlBosdS/Qvu+CDpgKJtvMWQNlF1ts8jJd/3OZvSHjy/1+xzTXwZvu1QBxLHb47V5IVw3qxkwls+bMSYXtwzcvrJTkQAflSrym862LlYafa/eSgR2KdepwvBgkEv3OKl8kdqgw4fZwP66Ab4xxio/5jQRChr8qZRfK12QQEc0b8as6/WlwiKza4wmb1DhKKGcbVn4BNLPOt94rzyv6f53/M9KCXSkt9H+MgAnyzOfUzPM9BFVsLheDvq9hq2C1XMw5/6bujU6UWP+y0Md5gwdggrkSkf3e7PQW93Q72Pm6z4+RzbQj0p6cooOtTY9UCaF5uvb7ZufbnhOBpm2GhUW5ePXW5RP+6sc6+l5TrvlxTb4vUFHYLq/wHo8LjPP9yox98gyoCDnX7QpdgtdomHd9fq9gVANBjLARRTKID3FNf+4LmEIRJkNFX3X/r/4oNSXgy41vVeAA=" alt="Specialist patient"
+                class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2" />
+              <img src="data:image/webp;base64,UklGRjoFAABXRUJQVlA4WAoAAAAwAAAAJwAAJwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI/AAAAA2AUG1b3earg18CDoKDUgVdFSQOoAoIChocJAo2ByMOMgfMwT8F93H5FUTEBKDS6LMmAuf8lhKak3X4m5QajEohNyE/oVIZn0Kusw4tp3Fbax4ntFWe70X0jPZuvHDBK3pqf/vvgb7mev9rok5wWH6pEd19ZAAe/ckGQBkBcCvDQ6RbYGTYaCCTtBToQYpRUgYxRGIglkkIi8mHFvK+n4UchxaSkiYROSNaEQlYnIgA8GYFrAAwO+qWt18cfbeAP5eT7RTxr3syXY71P9y87pACCvky2WbxBeXuw6smHD5Ru27T2CAuaJjnfT6rIo4LGud5V2ZQisB87MeBclZQOCBIAgAA0AsAnQEqKAAoAD5tNJZIpCKiISOJAIANiWUAtkewoOqXO+9/Nv/jPUPzx/T3/B9wf9Wd8l/ZUUov0p/0RLwTTEelfCjKR/2EvzMe13JRoOaVS7SNYN7FbPWttEy8JTS+cUAD2oKZgAD+83Uit7elo0PJ8NgZ0c9i2hF4j3/wy/5bYLhwNT9Yz8UFKNZKeR8itHw+85JVK00aXIHJTzHK7Cy7VUOJ5jtrrOrLZeH+dcXBdAg+4hGsyVf/gfdo6iZRBboTl8wKYSLj+NbMGR0jUtPortO88RK+5ku/1iuSOyEgA7D+TwrzMp8CkXK1upwdB/rHL6W7dNcWpT67tuoFQ04XV4bOVr+qm7odbTuSAVJiGuh1o+1Ko5kFI4GOqtsvxXUOIC5JJfmgXCrrjO/ItLup/sW4HnA5zBxEqjr5Z9fF941HX69F5fHaa7jnOltl+V7rl/f358g1ZTk3U/o2QoR1J+F0uw/M4TMxSYUOasQl7wjallt9bW1itExTDLZ7YB9xZj3TsjzQRTc5S46Pak+asvPzFSWULb81UuayMApYPwuqQuZQp3ifYP/DX0A8aesmmOWB15eG4PZdOK5qlqKIf4JEMmng2anAxSEaatFN9c8SKR32j4WY39J5hIEpQC1UUuZuf872Omlwp3An0fZb3z8cgBjoNthPlTUAzPu2Rnbh1b/gbCA28+ZAhq+H7Zdt9P1vIs8labCWdn8LKz/4ua9kzkJjJ4rxylb4AdbcQFdYMxg2G45FPIB2v7oLnkA7AN1oAAA=" alt="Specialist patient"
+                class="w-8 h-8 rounded-full border-2 border-white object-cover -ml-2" />
+              <span
+                class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold border-2 border-white -ml-2 shrink-0">
+                <i class="ti ti-plus text-xs"></i>
+              </span>
+            </div>
+            <p class="text-sm font-medium text-dark mt-3 mb-0">
+              Over 10,000+ Lives Breathing Better
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 2: Modern Diagnostic Technology (Image Card with Floating Info Box) -->
+        <div class="relative rounded-[5px] overflow-hidden lg:h-[360px] min-h-[320px] border border-slate-200/80 group">
+          <img src="/assets/why-choose-img-DgMr62Br.webp" alt="Modern Diagnostic Technology"
+            class="w-full h-full lg:h-[360px] object-cover rounded-[5px]" />
+
+          <!-- Floating Info Box at Bottom -->
+          <div
+            class="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 bg-white py-[20px] px-[20px] rounded-[5px] shadow-lg border border-slate-100">
+            <h4 class="mb-2">Modern Diagnostic Technology</h4>
+            <p class="mb-0">
+              Advanced equipment for accurate diagnosis and treatment planning.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 3: Stacked Cards (Aligned Top & Bottom to 360px with Exact 30px Gap) -->
+        <div class="flex flex-col gap-[30px] lg:h-[360px]">
+
+          <!-- Card Top: Personalized Treatment -->
+          <div
+            class="flex-1 lg:h-[165px] bg-surface border border-slate-200/80 rounded-[5px] p-[20px] flex flex-col justify-start transition-all duration-300 hover:shadow-md">
+            <h4 class="mb-2.5">Personalized Treatment</h4>
+            <p class="mb-0">
+              Every patient receives a customized care plan tailored to their health goals.
+            </p>
+          </div>
+
+          <!-- Card Bottom: Patient-Focused Experience -->
+          <div
+            class="flex-1 lg:h-[165px] bg-surface border border-slate-200/80 rounded-[5px] p-[20px] flex flex-col justify-start transition-all duration-300 hover:shadow-md">
+            <h4 class="mb-2.5">Patient-Focused Experience</h4>
+            <p class="mb-0">
+              Friendly staff, shorter wait times, and ongoing support throughout your treatment.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONDITIONS WE TREAT SECTION (Exact Figma Design & 0px Top Padding)
+       ========================================================================== -->
+  <section id="conditions" class="pt-0 pb-16 md:pb-20 lg:pb-24 bg-white overflow-hidden">
+    <div class="site-container">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 lg:mb-12">
+        <h2 class="mb-2.5">Conditions We Treat</h2>
+        <p class="mb-0">
+          Helping Patients Overcome Respiratory Conditions
+        </p>
+      </div>
+
+      <!-- Conditions Badges Container (20px Spacing on Desktop & Clean Wrap on Mobile) -->
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-[20px]">
+        <div class="condition-badge">Asthma</div>
+        <div class="condition-badge">COPD</div>
+        <div class="condition-badge">Chronic Bronchitis</div>
+        <div class="condition-badge">Emphysema</div>
+        <div class="condition-badge">Sleep Apnea</div>
+        <div class="condition-badge">Pulmonary Fibrosis</div>
+        <div class="condition-badge">Pneumonia</div>
+        <div class="condition-badge">Chronic Cough</div>
+        <div class="condition-badge">Lung Nodules</div>
+        <div class="condition-badge">Respiratory Infections</div>
+        <div class="condition-badge">Interstitial Lung Disease</div>
+        <div class="condition-badge">Shortness of Breath</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PATIENT TESTIMONIALS SECTION (Exact Figma Design, Swiper Slider, Global Classes)
+       ========================================================================== -->
+  <section id="testimonials" class="section-padding bg-surface overflow-hidden">
+    <div class="site-container">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
+        <h2 class="mb-2.5">Patient Testimonials</h2>
+        <p class="mb-0">
+          What Our Patients Say
+        </p>
+      </div>
+
+      <!-- Testimonial Slider Wrapper (Exact Figma: width 100%, max-width 992px) -->
+      <div class="w-full max-w-[992px] mx-auto">
+
+        <!-- Swiper Container -->
+        <div class="swiper testimonial-swiper overflow-hidden">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide h-auto">
+              <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                <!-- User Image Column (Equal height with card on desktop) -->
+                <div
+                  class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                  <img src="/assets/review-user-img1-24htWeYl.webp" alt="Sarah M. - BreathWell Patient"
+                    class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <!-- Review Card Column -->
+                <div
+                  class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                  <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                    “The doctors explained everything clearly and helped me finally control my asthma after years of
+                    struggling.”
+                  </p>
+                  <h4 class="mb-0">Sarah M.</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide h-auto">
+              <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                <!-- User Image Column -->
+                <div
+                  class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                  <img src="/assets/review-user-img2-CnKJaM22.webp" alt="Sarah M. - BreathWell Patient"
+                    class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <!-- Review Card Column -->
+                <div
+                  class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                  <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                    “The doctors explained everything clearly and helped me finally control my asthma after years of
+                    struggling.”
+                  </p>
+                  <h4 class="mb-0">Sarah M.</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide h-auto">
+              <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                <!-- User Image Column -->
+                <div
+                  class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                  <img src="/assets/review-user-img3-C_lCe3Z9.webp" alt="Sarah M. - BreathWell Patient"
+                    class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <!-- Review Card Column -->
+                <div
+                  class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                  <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                    “The doctors explained everything clearly and helped me finally control my asthma after years of
+                    struggling.”
+                  </p>
+                  <h4 class="mb-0">Sarah M.</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Controls: Right on Desktop, Centered on Mobile -->
+        <div class="flex items-center justify-center md:justify-end gap-3 mt-6 lg:mt-8">
+          <button type="button" aria-label="Previous Testimonial" class="testimonial-prev testimonial-nav-btn">
+            <i class="ti ti-arrow-left text-[18px]"></i>
+          </button>
+          <button type="button" aria-label="Next Testimonial" class="testimonial-next testimonial-nav-btn">
+            <i class="ti ti-arrow-right text-[18px]"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MEET OUR SPECIALISTS SECTION (Exact Figma Design & Responsive Mobile Button)
+       ========================================================================== -->
+  <section id="doctors" class="section-padding bg-white overflow-hidden">
+    <div class="site-container">
+
+      <!-- Section Header (Mobile: Centered, Desktop: Column 1-2 Title & Column 3 Subtitle/Button) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 items-start mb-10 lg:mb-14 text-center md:text-left">
+        <div class="w-full lg:col-span-2">
+          <h2 class="mb-0">Meet Our Specialists</h2>
+          <p class="text-muted mt-2 md:hidden">Expert Pulmonary Physicians</p>
+        </div>
+
+        <!-- Desktop-Only Right Column: Subtitle + Button (Aligned above Card 3) -->
+        <div class="hidden md:flex lg:col-start-3 flex-col items-start">
+          <p class="text-muted mb-2.5">Expert Pulmonary Physicians</p>
+          <a href="#doctors" class="btn-secondary py-3 px-6 sm:py-3.5 sm:px-7">View All Doctors</a>
+        </div>
+      </div>
+
+      <!-- 4 Specialists Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-[30px]">
+
+        <!-- Doctor Card 1: Dr. Michael Anderson -->
+        <a href="/team-details.html" class="doctor-card group"
+          aria-label="Dr. Michael Anderson - Pulmonologist & Critical Care Specialist">
+          <div
+            class="relative w-full aspect-[4/5] sm:aspect-auto sm:h-[340px] md:h-[360px] lg:h-[380px] overflow-hidden rounded-[5px]">
+            <img src="/assets/doctor-img01-Dx6kPsIw.webp" alt="Dr. Michael Anderson"
+              class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+            <!-- Hover Biodata Badge -->
+            <div class="doctor-card-badge">
+              <h5 class="text-white font-heading font-semibold text-[16px] sm:text-[17px] leading-tight mb-1">Dr.
+                Michael Anderson</h5>
+              <p class="text-white/90 font-sans text-[12px] sm:text-[13px] leading-snug mb-0">Pulmonologist &amp;
+                Critical Care Specialist</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Doctor Card 2: Dr. Emily Watson -->
+        <a href="/team-details.html" class="doctor-card group"
+          aria-label="Dr. Emily Watson - Pediatric Pulmonology Specialist">
+          <div
+            class="relative w-full aspect-[4/5] sm:aspect-auto sm:h-[340px] md:h-[360px] lg:h-[380px] overflow-hidden rounded-[5px]">
+            <img src="/assets/doctor-img02-D85YE6Gs.webp" alt="Dr. Emily Watson"
+              class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+            <!-- Hover Biodata Badge -->
+            <div class="doctor-card-badge">
+              <h5 class="text-white font-heading font-semibold text-[16px] sm:text-[17px] leading-tight mb-1">Dr. Emily
+                Watson</h5>
+              <p class="text-white/90 font-sans text-[12px] sm:text-[13px] leading-snug mb-0">Pediatric Pulmonology
+                Specialist</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Doctor Card 3: Dr. Sarah Jenkins -->
+        <a href="/team-details.html" class="doctor-card group"
+          aria-label="Dr. Sarah Jenkins - Interventional Pulmonologist">
+          <div
+            class="relative w-full aspect-[4/5] sm:aspect-auto sm:h-[340px] md:h-[360px] lg:h-[380px] overflow-hidden rounded-[5px]">
+            <img src="/assets/doctor-img03-c9QFU1QU.webp" alt="Dr. Sarah Jenkins"
+              class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+            <!-- Hover Biodata Badge -->
+            <div class="doctor-card-badge">
+              <h5 class="text-white font-heading font-semibold text-[16px] sm:text-[17px] leading-tight mb-1">Dr. Sarah
+                Jenkins</h5>
+              <p class="text-white/90 font-sans text-[12px] sm:text-[13px] leading-snug mb-0">Interventional
+                Pulmonologist</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Doctor Card 4: Dr. Robert Chen -->
+        <a href="/team-details.html" class="doctor-card group"
+          aria-label="Dr. Robert Chen - Sleep Medicine & Lung Specialist">
+          <div
+            class="relative w-full aspect-[4/5] sm:aspect-auto sm:h-[340px] md:h-[360px] lg:h-[380px] overflow-hidden rounded-[5px]">
+            <img src="/assets/doctor-img04-0G1GP11u.webp" alt="Dr. Robert Chen"
+              class="w-full h-full object-cover object-top rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+            <!-- Hover Biodata Badge -->
+            <div class="doctor-card-badge">
+              <h5 class="text-white font-heading font-semibold text-[16px] sm:text-[17px] leading-tight mb-1">Dr. Robert
+                Chen</h5>
+              <p class="text-white/90 font-sans text-[12px] sm:text-[13px] leading-snug mb-0">Sleep Medicine &amp; Lung
+                Specialist</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Mobile-Only Bottom Button (Appears below all cards on mobile) -->
+      <div class="mt-8 text-center md:hidden">
+        <a href="#doctors" class="btn-secondary w-full sm:w-auto inline-flex py-3 px-6 sm:py-3.5 sm:px-7">View All Doctors</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PATIENT EDUCATION SECTION (Articles / Blog Cards Grid)
+       ========================================================================== -->
+  <section id="education" class="section-padding bg-surface overflow-hidden">
+    <div class="site-container">
+
+      <!-- Section Header (Desktop: Left Title & Right Description/Button | Mobile: Centered) -->
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10 lg:mb-14 text-center md:text-left">
+        <div class="w-full md:w-auto">
+          <h2 class="mb-0">Patient Education</h2>
+          <p class="text-muted mt-3 md:hidden">
+            Explore expert-backed resources to better understand respiratory conditions, treatments, and healthy breathing habits.
+          </p>
+        </div>
+
+        <!-- Desktop-Only Right Column: Description + View All Articles Button -->
+        <div class="hidden md:flex flex-col items-start max-w-md">
+          <p class="text-muted mb-4">
+            Explore expert-backed resources to better understand respiratory conditions, treatments, and healthy breathing habits.
+          </p>
+          <a href="/articles.html" class="btn-secondary py-3 px-6 sm:py-3.5 sm:px-7">
+            View All Articles
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 Articles Grid (380px fill x 280px image height on desktop, 30px gap) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[30px]">
+
+        <!-- Article Card 1: Understanding Asthma -->
+        <a href="/articles-details.html" class="group flex flex-col h-full cursor-pointer" aria-label="Understanding Asthma - Patient Education">
+          <div class="relative w-full h-[220px] sm:h-[260px] lg:h-[280px] overflow-hidden rounded-[5px] mb-4 sm:mb-5 lg:mb-6 shrink-0">
+            <img src="/assets/patient-education-img01-BA3SUMv2.webp" alt="Understanding Asthma"
+              class="w-full h-full object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <h4 class="group-hover:text-primary transition-colors duration-200 mb-2.5 min-h-0 md:min-h-[54px] lg:min-h-[60px] leading-snug">
+            Understanding Asthma
+          </h4>
+          <p class="text-muted text-[15px] sm:text-[16px] leading-relaxed mb-0 flex-grow">
+            Learn the causes, symptoms, and effective ways to manage asthma for better daily breathing.
+          </p>
+        </a>
+
+        <!-- Article Card 2: Living with COPD -->
+        <a href="/articles-details.html" class="group flex flex-col h-full cursor-pointer" aria-label="Living with COPD - Patient Education">
+          <div class="relative w-full h-[220px] sm:h-[260px] lg:h-[280px] overflow-hidden rounded-[5px] mb-4 sm:mb-5 lg:mb-6 shrink-0">
+            <img src="/assets/patient-education-img02-Dus_75Sf.webp" alt="Living with COPD"
+              class="w-full h-full object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <h4 class="group-hover:text-primary transition-colors duration-200 mb-2.5 min-h-0 md:min-h-[54px] lg:min-h-[60px] leading-snug">
+            Living with COPD
+          </h4>
+          <p class="text-muted text-[15px] sm:text-[16px] leading-relaxed mb-0 flex-grow">
+            Discover practical tips, treatment options, and lifestyle changes to improve your quality of life.
+          </p>
+        </a>
+
+        <!-- Article Card 3: Sleep Apnea & Breathing -->
+        <a href="/articles-details.html" class="group flex flex-col h-full cursor-pointer" aria-label="Sleep Apnea & Breathing - Patient Education">
+          <div class="relative w-full h-[220px] sm:h-[260px] lg:h-[280px] overflow-hidden rounded-[5px] mb-4 sm:mb-5 lg:mb-6 shrink-0">
+            <img src="/assets/patient-education-img03-B5lNmzEO.webp" alt="Sleep Apnea Warning Signs"
+              class="w-full h-full object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <h4 class="group-hover:text-primary transition-colors duration-200 mb-2.5 min-h-0 md:min-h-[54px] lg:min-h-[60px] leading-snug">
+            Sleep Apnea &amp; Breathing
+          </h4>
+          <p class="text-muted text-[15px] sm:text-[16px] leading-relaxed mb-0 flex-grow">
+            Understand the warning signs of sleep apnea and how proper diagnosis and treatment can restore restful sleep.
+          </p>
+        </a>
+
+      </div>
+
+      <!-- Mobile-Only Bottom Button (Appears below all 3 cards on mobile screens) -->
+      <div class="mt-8 text-center md:hidden">
+        <a href="/articles.html" class="btn-secondary w-full sm:w-auto inline-flex py-3 px-6 sm:py-3.5 sm:px-7">
+          View All Articles
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INSURANCE MADE SIMPLE SECTION (Brand Logos Swiper Slider)
+       ========================================================================== -->
+  <section id="insurance" class="section-padding bg-lightBlue overflow-hidden">
+    <div class="site-container">
+
+      <!-- Section Header (Desktop: Left Title & Right Description/Button | Mobile: Centered) -->
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-12 lg:mb-16 text-center md:text-left">
+        <div class="w-full md:w-auto">
+          <h2 class="mb-0">Insurance Made Simple</h2>
+          <div class="mt-3 md:hidden">
+            <p class="text-dark/80 mb-1 leading-relaxed">
+              We proudly accept most major insurance providers and work with patients to make quality pulmonary care accessible.
+            </p>
+            <p class="text-dark/80 mb-0 leading-relaxed font-medium">
+              Need help verifying your coverage?
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop-Only Right Column: Description + Verify Insurance Button -->
+        <div class="hidden md:flex flex-col items-start max-w-lg">
+          <p class="text-dark/80 mb-1 leading-relaxed">
+            We proudly accept most major insurance providers and work with patients to make quality pulmonary care accessible.
+          </p>
+          <p class="text-dark/80 mb-4 leading-relaxed font-medium">
+            Need help verifying your coverage?
+          </p>
+          <a href="#verify-insurance" class="btn-secondary py-3 px-6 sm:py-3.5 sm:px-7">
+            Verify Insurance
+          </a>
+        </div>
+      </div>
+
+      <!-- Insurance Companies Swiper Slider (Desktop: 5, Tablet: 4, Mobile: 3) -->
+      <div class="swiper insurance-swiper w-full select-none py-2">
+        <div class="swiper-wrapper items-center">
+
+          <!-- Set 1 -->
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo01-jnN0gfC0.webp" alt="BlueCross BlueShield"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,UklGRtgNAABXRUJQVlA4WAoAAAAwAAAA2gAAMQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBILgQAAA2gl+1z3bj6FUGnCDIMokUQLYJ4EdhB4BiBEwTZIMgaQR0EVRBURrAKgs4iOBcrY/lyTi9/RcQE4E/9fRk5v/6MEEVEfkbW+Hkl+pnhn5gacfcTQvbB+0/IBf9HLSxWNhZu8MEns4awpV4DH/wAqjGmITADtI1dJQSXgAwZrGzMd3AhxJhj4idGNjdQ8waGcHQpTLGFModhNG+iMDWUbhWxdwBfTU8wcEvM3LyKim1OUJs1LPlj6B02MV9NrDZISKaWKgwxpcFgk9vmTXomWzO0jGgAAKJeUs6L5qCgb0hJWekqzPjjcwoAWV05XVEiKZdUCcBfMaKkA6jEUYHEVKyqGaWnUyWaEyF1ZvcY+bodATj8dXwQgk0D7Ne75QGbVlF+Qvr87kYae9+G2JiZDy7EeDFQn+WBKTDm6ShzovI4HtXntyY2Vy9y3RKzitk9uEAbqhbgi1UYCRPy0mFNRgPrZYBD53MY0iBrA+brb94BwFXElqyA8bEMWr8DgFDV5hGyFkITeRYAndiaFExe4W6tAEADKUoNrJtLy0fBY3n7qDXba2yrkRdEpSkVxodnAO+a55DqHdHXj1qBvIlJd4AyvD7lGg5z8Tvo3yhTkETYaBqk/PwBEYA17xi7taR4vHuH/nDQrO5zGd6tFQ8Z2jbJHAOlEAwMwSqW05thVuUfGU03A9w2Cf4ThYblKnlQQisRnlbgCXTrhbEAfmCKXH5SXeYwNhkA37GUvLHGYDi/J7gAMAb6FktqNsYylpRLi+kWGC7HCcmnkbi2WNqixKxlhwl7jMq1wdLSCfMOOyxlUWJx6YJZ+8ZhKbnE8u4x4+CuguW8YHk5V/mrCwGHWiEvPbqQ5rjqdR5wWNQM6vbmveCbnZuF9thisPieWNXh3lvgUiM7LKSq9Zgkh1mZIMlYc0bCj3lsNB3SX7ca62ZFf32kstC2Kfw8WDOms5ryPI2n74mmGSTFTIUm4Y3G5NUkNrcZEYWluG4Vq3u64DMF9qujqLhEFQusKbyfkPFAIFKwXwp1hjYZrlsN9pvGhwix2Ro4n4Iunfdm9VTMAadzWAhnFXTipvc9RctGA1uyxDAwsAKcGwOETqYQvW0UfAm3np9dmylAJu8lleqiAshEBje5Js4/PibjrAJsNz01h1lIUypG9c1Jl/q1oEFj5oNaS4qUq/sscCh4Enj9kqcjeSDXfELDZfd1lLlKVfMkUHwpOZXxD7AvTJL1NOC6cnngjiczCbze8iyRQPmSZymM6ul7OuzvF1ochBcubSpmp4A/+iLnQSJNqwkVSqt7/gYIaTgk4dBDW9maU1k3F6A9i9nAUE987xYigoHhrSHKQSYiHp0XwcD2LHZtCIB4dB4AKq9R7oLmsbRHNmsyES8A7i42b+9v8NIb3UsD8ZHk3nVeoA4hiUNi5zvxkV+GVlA4ILQHAADwJACdASrbADIAPmkskkWkIqGW21b8QAaEsiI7kIwgB2imnvK+cNbm0wGe7Us8/9b9RP59/TP4AP7t5QHqL8wH7P+rl/kfVX/Yt859Az+AdSf/fsEW/tPbrkK1vu8mXQwR42u9vmDf1n/ieqvnSetvYO6PP7mexH+w6scuBQb1UaTM+tv5ojw6k+4Ala5+Uhlk9RtUU9Cm7l7K0ImXfq/vhAhKdu9G+zuiM2G9U1UNnpjdEjSZ06GBPUVGjCYYdBn/mKH5Q2r87p1ctaglt5K4CMqlcA9oXa24DkTW4gI5BvE8GFP4GMwnUULtfDqF08aC8/luqVGY+pcK/7ZPqJX67C2wqf40PLD1qYCm15knbny4Ok43JeWX3cXpy+stCaxkkKt7BKWU2c5FTwfM60AAAP79NnB+AkqS2EZ3I9oaHtRWC/P+bHU+/9PN1Q0Nx7LJfUHSdgoaoFirP8Wcb/GE6nsigAtBSwsH8w4bqkI5H5+wasb4y+Dlulgymm8Mode9wwW8iGBAwvAIon0PwnEcGqE0286wCQgCfRiOBrj4zT+76GsyrQA6dNmm00EXtQglKO1vDPhl/yfI7uw+IGcdvobRRJwn/2JVKFnq9CW3MJzAqMT+zSJdNnTBZpIE//OqE5ML+z2UQL+VKTYtZP1odbcUHNjaM9YohOVFvLlfMDMvbsbwrPT1H/o9ekNcbjkS00u9tjy/5EaefAS9phY7tY4MWqCtqZvfgIKMIU8sJXJoTvxLvRMcg5kPn3/YDfAikd6b1MfXbiK9U/f+INRWp3Bn4bXUVsW7rll2yHt6WFoOz2mXLmATyqLfibsaNlkbqTRShdWAhiClzaP/0Gq8Iy9TE0CkRlPiV8txThW2WfBcQawbiJ7GM1Eq7JTIrwpkwcCYqFr2Yc2UziZsIeozz6Bbom1n1WpPchW+1/49fxTCGInKH6ea3iFaveKSnWU6z8mf+5gwL4p2c6UTGCzQXuSUNJbOX3uwR8vwAtYBOfGy22/axrqKbngTPnfzrxTMUYpjviIzS6irgkzn6PzbYeVKV4RYzmsHqRVGlkTB/ASnT/BJ1P85+C76bnmxmw32ddHmEY6fShwSi29DxNTB2Y5dTSrwpQRgZ398nzRQK4OTzn8Y6cRtCLlC8g02ntcLdimFNWc/FNr4jRivaLaQYd4u9t0kKqv7mKg9fAqeyjeo1s9HaWxO91R8k83Ha7k9ydL86NCfLZCtlYKVAFwj5PpDbVtGYzapSef8y+zwz69UqFDDwMWZaEDFbdT5opb3UNB4vQ1KHmr0qQkiKZkfRS31VX/tT6ilWYa9y+V8ablqnMpq9L8BTSXR5q6gOO6idfBzINHBBhPStUw9jr95hkKsNptR/Ch+E9zJYhDRTWhCj53UY/4L1wzV3hHbPsi6Q4W25zku3wmenML6p7sPOgg6Q+CKjaUNteSXQqxU1mN3TYGa46RI3IO4pxDhvLhYtnxZ2M1l3f7K67zO+C8SqbTukR4EmvuT45Ss3FH8v4pcktOyP8DBQ4utRfzoebdpiGKBRPzq0YkmOARv3BKidljvKwGxBl/RdF8bJb67Yqhav6uGFYUT25PW5iOOD/8Qb04Qt1VuE/p/20eaVluYSsGfJAfQ7Sf37p1ywhJdlsrrrB5ehd2c+Q/SiV3cZDHuasCM4HIuUaFNTP/wAjmORaqAfHaKuTUfun0Q/zDK3iU6DAzyCwncHqBqzoTkg5qUyO0b+8HgTf8b8PZVQMimKRXWxLZfJffsBaRKfHfBiVy5HVB+wd2h+AlpNK1fGYawb/5rtDbtVjH94ft/6tBc/J/X5SO3vRpVvGmJSZfia7pmqusDqscN4nsDH2OGvNQq+G62diXOT7ElhD0ZfSwaEzk/Fd+mEwi7hyAb4YcbBKOmIBbsh3DD3Fux8tPp+pxadlqfSfkntHF5EG8kPsqmXEqREACgsiVpSS9CzD17OiK5hKGeMeNtOcYnOJn3b4E6sMwef6+xIfxiv9a1RvtW+QVNPHFJ+tbjz13WoP6RFUyxTTgDw9y8kkXePh/FiosiKj3AL/04MPKveAD7oaRJz+Xt87VTd0R1XlQv5DetS2Fss1k19cfZbF5fVwW7ArjSgWEj88n9kr81FFZAwnCpXdjrFUP1fRKSaQGWj2CIotOAGt6vfBuLq4M1p5griK7PvTnNs+X/4f3znvt7Xt6f3e+F5vclkpUxZtJwACxLkKvQSF3ReOLpPqwhc1sF9lSHmnxPQjo2sOJrIwko5y39H0/6ymY9eVDSljik24PXvXUP9xITbxXHovAe2px9NysKYVOH4391Vai42WSY0/9PNAxQKklxl70m55MMBYxgyRejaxaneLQ5oxb4JnGD8P+ogPe8gzXkvNKeKWUAGZGJuwwACKaC7JsWGnNi66Gi1JN2h9qLD04H/ljy0TUXnHrqnsxnB74zXaGrPZaxL7xGmq5FD6wvNjDniUzbIyBmmx/MoMp32YEG8bJqY0dKUv/zbe4baG86nzGMB9S9WVDrYbZK/vtaPn0ZdICu13Xoiqr5HYG0boC3X3+6uwgCRkZfOf0+BLluHmUvxo4RDTcVT1rfc9lnuhpCa9HvKKWHTwEDiE2piwT74AAAAAAAAAAAAAAA" alt="Aetna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo03-C-zIizIH.webp" alt="Cigna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="United Healthcare"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="Humana"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+
+          <!-- Set 2 -->
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo01-jnN0gfC0.webp" alt="BlueCross BlueShield"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="Aetna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo03-C-zIizIH.webp" alt="Cigna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="United Healthcare"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="Humana"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+
+          <!-- Set 3 -->
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo01-jnN0gfC0.webp" alt="BlueCross BlueShield"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="Aetna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="/assets/insurance-company-logo03-C-zIizIH.webp" alt="Cigna"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="United Healthcare"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="data:image/webp;base64,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" alt="Humana"
+              class="h-[34px] sm:h-[40px] md:h-[45px] lg:h-[50px] w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[185px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile-Only Bottom Button (Appears below the logo slider on mobile) -->
+      <div class="mt-8 text-center md:hidden">
+        <a href="#verify-insurance" class="btn-secondary w-full sm:w-auto inline-flex py-3 px-6 sm:py-3.5 sm:px-7">
+          Verify Insurance
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FREQUENTLY ASKED QUESTIONS SECTION (Interactive Accordion)
+       ========================================================================== -->
+  <section id="faq" class="section-padding bg-white overflow-hidden">
+    <div class="site-container">
+
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
+
+        <!-- Left Column: Title -->
+        <div class="w-full lg:max-w-[580px] text-center lg:text-left">
+          <h2 class="mb-0 text-dark leading-tight">
+            Frequently Asked<br class="hidden sm:inline" /> Questions
+          </h2>
+        </div>
+
+        <!-- Right Column: Accordion Items (15px gap on desktop, 10px padding per item) -->
+        <div class="flex-1 w-full flex flex-col gap-[15px]">
+
+          <!-- FAQ Item 1 (Active by default as shown in Figma) -->
+          <div class="faq-item active">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none" aria-expanded="true">
+              <h4 class="faq-question mb-0">Do I need a referral?</h4>
+              <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                <i class="ti ti-plus faq-icon-plus"></i>
+                <i class="ti ti-x faq-icon-close"></i>
+              </span>
+            </button>
+            <div class="faq-content px-[10px] pb-[10px]">
+              <p class="text-muted leading-relaxed mb-0">
+                Some insurance providers require a referral while others allow direct appointments.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none" aria-expanded="false">
+              <h4 class="faq-question mb-0">How long is the first consultation?</h4>
+              <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                <i class="ti ti-plus faq-icon-plus"></i>
+                <i class="ti ti-x faq-icon-close"></i>
+              </span>
+            </button>
+            <div class="faq-content px-[10px] pb-[10px] hidden">
+              <p class="text-muted leading-relaxed mb-0">
+                Initial pulmonary consultations typically take 45 to 60 minutes to allow thorough evaluation, diagnostic review, and a personalized care plan discussion.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none" aria-expanded="false">
+              <h4 class="faq-question mb-0">What should I bring to my appointment?</h4>
+              <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                <i class="ti ti-plus faq-icon-plus"></i>
+                <i class="ti ti-x faq-icon-close"></i>
+              </span>
+            </button>
+            <div class="faq-content px-[10px] pb-[10px] hidden">
+              <p class="text-muted leading-relaxed mb-0">
+                Please bring a valid photo ID, your insurance card, a list of current medications and inhalers, and any recent chest X-rays, CT scans, or test results.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none" aria-expanded="false">
+              <h4 class="faq-question mb-0">Do you perform sleep studies?</h4>
+              <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                <i class="ti ti-plus faq-icon-plus"></i>
+                <i class="ti ti-x faq-icon-close"></i>
+              </span>
+            </button>
+            <div class="faq-content px-[10px] pb-[10px] hidden">
+              <p class="text-muted leading-relaxed mb-0">
+                Yes, we offer both comprehensive in-lab polysomnography and convenient at-home sleep apnea testing with expert interpretation and follow-up care.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none" aria-expanded="false">
+              <h4 class="faq-question mb-0">Do you offer telehealth visits?</h4>
+              <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                <i class="ti ti-plus faq-icon-plus"></i>
+                <i class="ti ti-x faq-icon-close"></i>
+              </span>
+            </button>
+            <div class="faq-content px-[10px] pb-[10px] hidden">
+              <p class="text-muted leading-relaxed mb-0">
+                Yes, we provide secure virtual telehealth consultations for follow-up appointments, routine symptom check-ins, medication refills, and treatment reviews.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PERSONALIZED CARE / CTA SECTION (Your Journey to Better Breathing Starts Today)
+       ========================================================================== -->
+  <section id="cta" class="section-padding relative bg-cover bg-center bg-no-repeat overflow-hidden"
+    style="background-image: url('/assets/personalized-care-bg-4rgRz9Q7.webp');">
+    <!-- Subtle Gradient Overlay for mobile readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10 lg:to-transparent pointer-events-none"></div>
+
+    <div class="site-container relative z-10 flex justify-center lg:justify-end">
+      <!-- White CTA Box (Strict max-w-[585px] as per Figma, 30px desktop padding) -->
+      <div class="w-full max-w-[585px] bg-white rounded-[5px] p-5 sm:p-6 md:p-[30px] lg:p-[30px] shadow-2xl">
+        <h2 class="mb-4 text-dark font-heading font-bold leading-tight">
+          Your Journey to Better Breathing Starts Today
+        </h2>
+        <p class="text-muted leading-relaxed mb-6 sm:mb-8 text-[15px] sm:text-[16px]">
+          Don't let breathing problems limit your life. Schedule a consultation with our pulmonary specialists and receive personalized care designed around your needs.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <a href="/appointment.html" class="btn-primary w-full sm:w-auto text-center py-3.5 px-7">
+            Book an Appointment
+          </a>
+          <a href="tel:+1234567890" class="btn-secondary w-full sm:w-auto text-center py-3.5 px-7">
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER SECTION
+       ========================================================================== -->
+  <footer id="contact" class="bg-dark-bg text-white pt-8 sm:pt-14 lg:pt-20 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
+    <div class="site-container">
+
+      <!-- Main Footer Grid (Desktop: Brand Column Left with vertical divider touching horizontal border, 3 Columns Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-slate-700/80">
+
+        <!-- Column 1: Brand Info, Logo & Social Icons (4 Cols on Desktop with right border connecting to bottom border) -->
+        <div class="lg:col-span-4 lg:pr-14 border-b border-slate-700/80 lg:border-b-0 lg:border-r border-slate-700/80 pb-6 sm:pb-8 lg:pb-12 flex flex-col justify-between">
+          <div>
+            <a href="#" class="inline-block mb-4 sm:mb-6" aria-label="BreathWell Pulmonary Clinic Home">
+              <img src="/assets/site-footer-logo-DXTalYLY.webp" alt="BreathWell Pulmonary Clinic" class="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+            </a>
+            <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-5 sm:mb-6 max-w-[280px]">
+              Providing compassionate pulmonary care with advanced diagnostics, personalized treatment plans, and long-term respiratory wellness for patients across Phoenix, Arizona.
+            </p>
+          </div>
+
+          <!-- Social Media Icons (Facebook, YouTube, Instagram, X) -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-icon">
+              <i class="ti ti-brand-facebook text-[18px]"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="footer-social-icon">
+              <i class="ti ti-brand-youtube text-[18px]"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-icon">
+              <i class="ti ti-brand-instagram text-[18px]"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="footer-social-icon">
+              <i class="ti ti-brand-x text-[18px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Columns (8 Cols on Desktop: Adress & Contact, Quick Links, Services) -->
+        <div class="lg:col-span-8 lg:pl-14 pt-6 sm:pt-8 lg:pt-0 pb-8 sm:pb-10 lg:pb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 lg:gap-10">
+
+          <!-- Column 2: Adress & Contact -->
+          <div class="flex flex-col">
+            <!-- Adress Group -->
+            <div class="mb-6 sm:mb-10">
+              <h4 class="footer-heading">Adress</h4>
+              <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-0">
+                Phoenix, Arizona
+              </p>
+            </div>
+
+            <!-- Contact Group -->
+            <div>
+              <h4 class="footer-heading">Contact</h4>
+              <ul class="space-y-3">
+                <li>
+                  <a href="tel:6025550187" class="footer-link">
+                    (602) 555-0187
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@breathwellclinic.com" class="footer-link break-all">
+                    info@breathwellclinic.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 3: Quick Links -->
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="/" class="footer-link">Home</a></li>
+              <li><a href="/about.html" class="footer-link">About</a></li>
+              <li><a href="/service.html" class="footer-link">Service</a></li>
+              <li><a href="/team.html" class="footer-link">Doctors</a></li>
+              <li><a href="/articles.html" class="footer-link">Articles</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Services -->
+          <div>
+            <h4 class="footer-heading">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="#services" class="footer-link">Asthma Care</a></li>
+              <li><a href="#services" class="footer-link">COPD Treatment</a></li>
+              <li><a href="#services" class="footer-link">Sleep Apnea</a></li>
+              <li><a href="#services" class="footer-link">Lung Function Testing</a></li>
+              <li><a href="#services" class="footer-link">Pulmonary Rehabilitation</a></li>
+              <li><a href="#services" class="footer-link">Smoking Cessation</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Copyright & Legal Links (Directly below border-b line with no gap) -->
+      <div class="pt-4 sm:pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs sm:text-sm text-white">
+        <p class="mb-0 text-white text-xs sm:text-sm">
+          &copy; 2026 KidneyLife Nephrology Center. All Rights Reserved by Protocloud Technologies 2026.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="#privacy" class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Privacy Policy</a>
+          <span class="inline-block w-px h-3.5 bg-slate-500"></span>
+          <a href="#terms" class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Terms and Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vite Script -->
+</body>
+
+</html>

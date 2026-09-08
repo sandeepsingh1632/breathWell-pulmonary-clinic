@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="/images/fav-icon.webp" />
+  <title>Service Details - BreathWell Pulmonary Clinic</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="bg-white text-dark font-sans antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================================================
+       STICKY HEADER WITH SINGLE UNIFIED NAVBAR (Desktop Inline + Mobile Offcanvas)
+       ========================================================================== -->
+  <header id="mainHeader"
+    class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm transition-all duration-300">
+
+    <!-- Mobile Drawer Backdrop Overlay (Inside Header Stacking Context at z-40) -->
+    <div id="navbarBackdrop"
+      class="fixed inset-0 bg-dark-bg/60 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden">
+    </div>
+
+    <!-- Global 1200px Container -->
+    <div class="site-container relative z-50">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- 1. Logo (Left) -->
+        <a href="/" class="flex items-center shrink-0" aria-label="BreathWell Pulmonary Clinic Home">
+          <img src="/images/site-header-logo.webp" alt="BreathWell Pulmonary Clinic"
+            class="h-10 sm:h-12 w-auto object-contain" />
+        </a>
+
+        <!-- 2. Single Unified Nav Menu (Desktop, Tablet & Mobile) -->
+        <nav id="navbarMenu" class="
+          fixed inset-y-0 right-0 h-full w-[290px] sm:w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-5 sm:p-6 overflow-y-auto
+          lg:static lg:h-auto lg:w-auto lg:max-w-none lg:bg-transparent lg:shadow-none lg:z-auto lg:transform-none lg:transition-none lg:flex-row lg:items-center lg:gap-8 lg:p-0 lg:overflow-visible
+        ">
+
+          <!-- Mobile-Only Drawer Header (Logo + Close Button) -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100 lg:hidden">
+            <img src="/images/site-header-logo.webp" alt="BreathWell Pulmonary Clinic"
+              class="h-8 sm:h-9 w-auto object-contain" />
+            <button id="closeNavbarBtn" type="button" aria-label="Close Menu"
+              class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 text-muted hover:text-dark flex items-center justify-center transition-colors cursor-pointer">
+              <i class="ti ti-x text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Single Nav Links List (Desktop & Mobile Shared) -->
+          <ul class="flex flex-col lg:flex-row lg:items-center gap-1.5 lg:gap-8 mt-4 mb-2 lg:my-0">
+            <li>
+              <a href="/"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/service.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-primary bg-lightBlue/40 lg:bg-transparent lg:p-0 lg:font-sans lg:font-semibold lg:text-[16px] transition-colors">
+                Service
+              </a>
+            </li>
+
+            <!-- Pages Dropdown Menu -->
+            <li class="relative group" id="pagesDropdown">
+              <button id="pagesToggleBtn" type="button"
+                class="flex items-center justify-between w-full lg:w-auto px-3.5 py-2.5 lg:p-0 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:font-sans lg:font-medium lg:text-[16px] gap-1.5 focus:outline-none cursor-pointer transition-colors">
+                <span>Pages</span>
+                <i id="pagesArrow"
+                  class="ti ti-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+
+              <!-- Dropdown Box (Hover on Desktop + Click Toggle) -->
+              <div id="pagesDropdownMenu"
+                class="hidden lg:block lg:invisible lg:opacity-0 lg:translate-y-2 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:absolute lg:top-full lg:left-0 lg:w-48 bg-slate-50 lg:bg-white rounded-lg lg:rounded-xl border border-slate-100 dropdown-shadow py-1.5 px-1 lg:py-2 lg:px-0 mt-1 lg:mt-2 transition-all duration-200 z-50">
+                <a href="/team.html"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Our
+                  Doctors</a>
+                <a href="/#testimonials"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Testimonials</a>
+                <a href="/#faq"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">FAQ</a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Mobile-Only Drawer Bottom Button -->
+          <div class="pt-4 mt-2 border-t border-slate-100 lg:hidden">
+            <a href="/contact.html" class="btn-primary w-full text-center py-3 px-6 font-medium shadow-sm">
+              Contact
+            </a>
+          </div>
+
+        </nav>
+
+        <!-- 3. Desktop Action Button & Mobile Hamburger Toggle -->
+        <div class="flex items-center gap-3">
+          <!-- Desktop Contact Button -->
+          <a href="/contact.html" class="hidden lg:inline-flex btn-primary">
+            Contact
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button (lg:hidden) -->
+          <button id="openNavbarBtn" type="button" aria-label="Open Mobile Menu"
+            class="lg:hidden w-10 h-10 rounded-lg bg-lightGray hover:bg-lightBlue text-dark hover:text-primary flex items-center justify-center transition-colors focus:outline-none cursor-pointer">
+            <i class="ti ti-menu-2 text-2xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       INNER HERO / PAGE BANNER SECTION (Exact Figma Design & Centered)
+       ========================================================================== -->
+  <section class="section-padding bg-lightGray overflow-hidden">
+    <div class="site-container text-center">
+
+      <!-- Main Title (2 Lines Break on Desktop, Centered) -->
+      <h1 class="text-dark font-heading font-bold mb-0 leading-tight text-center">
+        Advanced Pulmonary Care for Every<br class="hidden sm:inline" /> Stage of Your Respiratory Health
+      </h1>
+
+      <!-- Description Paragraph (15px margin top/bottom on desktop, 10px on mobile/tab) -->
+      <p
+        class="page-hero-desc text-muted text-[15px] sm:text-[16px] leading-relaxed my-[10px] lg:my-[15px] text-center">
+        From preventive screenings to specialized pulmonary treatments, our experienced team provides comprehensive
+        respiratory care using advanced technology and personalized treatment plans.
+      </p>
+
+      <!-- Breadcrumbs with Tabler Icon (Strict Single Centered Horizontal Row) -->
+      <div class="flex items-center justify-center gap-2 text-sm sm:text-base font-medium font-sans text-center">
+        <a href="/" class="text-dark hover:text-primary transition-colors">Home</a>
+        <i class="ti ti-arrow-right text-primary text-sm sm:text-base"></i>
+        <a href="/service.html" class="text-primary hover:underline transition-colors">Service</a>
+        <i class="ti ti-arrow-right text-primary text-sm sm:text-base"></i>
+        <span class="text-primary font-semibold">Asthma Management</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (Service Details Page Content Area)
+       ========================================================================== -->
+  <main id="service-details-main" class="flex-grow">
+
+    <!-- Service Details Main Content Section -->
+    <section class="section-padding bg-white">
+      <div class="site-container">
+
+        <!-- 1. Top Featured Image (Full Container Width, Rounded Corners) -->
+        <div class="w-full mb-10 sm:mb-12 lg:mb-16 rounded-[5px] overflow-hidden">
+          <img src="/images/services-details-feature-img.webp" alt="Pulmonary Specialists Reviewing Patient Chest X-Ray"
+            class="w-full h-auto object-cover rounded-[5px]" />
+        </div>
+
+        <!-- 2. Content Container (Max-Width 995px on Desktop, 100% on Tablet/Mobile) -->
+        <div class="w-full max-w-[995px] mx-auto space-y-[20px] sm:space-y-[24px] lg:space-y-[30px]">
+
+          <!-- Block 1: Breathe Easier with Expert Asthma Care -->
+          <div>
+            <h2 class="text-dark font-heading font-bold mb-[14px] sm:mb-[16px] lg:mb-[20px] leading-tight">
+              Breathe Easier with Expert Asthma Care
+            </h2>
+            <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+              Asthma is a chronic respiratory condition that can affect your daily life, sleep, and overall well-being.
+              At BreathWell Pulmonary Clinic, we provide personalized asthma management focused on reducing symptoms,
+              preventing flare-ups, and helping you maintain healthy lung function. Using advanced diagnostic testing
+              and evidence-based treatments, our specialists create care plans tailored to your lifestyle, triggers, and
+              medical history.
+            </p>
+          </div>
+
+          <!-- Block 2: What's Included -->
+          <div>
+            <h2 class="text-dark font-heading font-bold mb-[14px] sm:mb-[16px] lg:mb-[20px] leading-tight">
+              What's Included
+            </h2>
+
+            <div class="space-y-[14px] sm:space-y-[16px] lg:space-y-[20px]">
+              <!-- Item 1 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Comprehensive Asthma Evaluation
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Identify symptoms, triggers, and lung function through detailed respiratory assessments.
+                </p>
+              </div>
+
+              <!-- Item 2 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Lung Function Testing
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Advanced spirometry and pulmonary function tests for accurate diagnosis and monitoring.
+                </p>
+              </div>
+
+              <!-- Item 3 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Personalized Medication Management
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Customized treatment plans including inhalers, controller medications, and rescue therapies.
+                </p>
+              </div>
+
+              <!-- Item 4 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Allergy &amp; Trigger Assessment
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Understand environmental and lifestyle factors that contribute to asthma attacks.
+                </p>
+              </div>
+
+              <!-- Item 5 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Asthma Action Plan
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Receive a personalized action plan that helps you manage symptoms confidently at home.
+                </p>
+              </div>
+
+              <!-- Item 6 -->
+              <div>
+                <h4 class="text-dark font-heading font-semibold mb-[6px] sm:mb-[8px] lg:mb-[10px]">
+                  Ongoing Monitoring
+                </h4>
+                <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+                  Regular follow-up visits ensure your treatment remains effective as your health changes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Block 3: Why Choose BreathWell -->
+          <div>
+            <h2 class="text-dark font-heading font-bold mb-[8px] sm:mb-[10px] lg:mb-[12px] leading-tight">
+              Why Choose BreathWell
+            </h2>
+            <h4 class="text-dark font-heading font-semibold mb-[10px] sm:mb-[12px] lg:mb-[14px]">
+              Expert Care Designed Around Your Needs
+            </h4>
+            <ul class="list-disc pl-5 space-y-2 sm:space-y-2.5 marker:text-muted">
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Board-Certified Pulmonary Specialists
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Advanced Diagnostic Technology
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Personalized Treatment Plans
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Patient Education &amp; Support
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Evidence-Based Medical Care
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Long-Term Respiratory Wellness
+              </li>
+            </ul>
+          </div>
+
+          <!-- Block 4: Benefits of Asthma Management -->
+          <div>
+            <h2 class="text-dark font-heading font-bold mb-[8px] sm:mb-[10px] lg:mb-[12px] leading-tight">
+              Benefits of Asthma Management
+            </h2>
+            <h4 class="text-dark font-heading font-semibold mb-[10px] sm:mb-[12px] lg:mb-[14px]">
+              Helping You Live Without Limits
+            </h4>
+            <ul class="list-disc pl-5 space-y-2 sm:space-y-2.5 marker:text-muted">
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Reduce asthma attacks and emergency visits
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Improve breathing and lung function
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Sleep more comfortably through the night
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Increase daily activity with greater confidence
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Prevent long-term lung complications
+              </li>
+              <li class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed">
+                Enjoy a healthier, more active lifestyle
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PATIENT SUCCESS STORY SECTION (Exact Figma Design, Swiper Slider, Global Classes)
+         ========================================================================== -->
+    <section id="patient-success-story" class="section-padding bg-surface overflow-hidden">
+      <div class="site-container">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
+          <h2 class="mb-2.5">Patient Success Story</h2>
+          <p class="mb-0">
+            Real Stories. Real Results.
+          </p>
+        </div>
+
+        <!-- Testimonial Slider Wrapper (Exact Figma: width 100%, max-width 992px) -->
+        <div class="w-full max-w-[992px] mx-auto">
+
+          <!-- Swiper Container -->
+          <div class="swiper testimonial-swiper overflow-hidden">
+            <div class="swiper-wrapper">
+
+              <!-- Slide 1 -->
+              <div class="swiper-slide h-auto">
+                <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                  <!-- User Image Column (Equal height with card on desktop) -->
+                  <div
+                    class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                    <img src="/images/review-user-img1.webp" alt="Sarah M. - BreathWell Patient"
+                      class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <!-- Review Card Column -->
+                  <div
+                    class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                    <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                      “For years I struggled with frequent asthma attacks that limited my daily activities. The
+                      specialists at BreathWell created a personalized treatment plan that finally helped me control my
+                      symptoms. I can now exercise, sleep better, and enjoy life with confidence.”
+                    </p>
+                    <h4 class="mb-0">Sarah M.</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide h-auto">
+                <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                  <!-- User Image Column -->
+                  <div
+                    class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                    <img src="/images/review-user-img2.webp" alt="David R. - BreathWell Patient"
+                      class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <!-- Review Card Column -->
+                  <div
+                    class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                    <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                      “The care and attention I received at BreathWell transformed my daily life. The comprehensive
+                      diagnostic testing identified my exact triggers, and their targeted medication plan gave me my
+                      energy back.”
+                    </p>
+                    <h4 class="mb-0">David R.</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide h-auto">
+                <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-[30px] w-full">
+                  <!-- User Image Column -->
+                  <div
+                    class="w-full md:w-[380px] h-[280px] sm:h-[320px] md:h-auto shrink-0 relative overflow-hidden rounded-[5px] group">
+                    <img src="/images/review-user-img3.webp" alt="Emily S. - BreathWell Patient"
+                      class="w-full h-full md:absolute md:inset-0 object-cover rounded-[5px] transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <!-- Review Card Column -->
+                  <div
+                    class="flex-1 bg-white border border-slate-200/80 rounded-[5px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between md:min-h-[340px] transition-all duration-300 hover:shadow-lg hover:border-primary/40">
+                    <p class="text-dark text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8">
+                      “Having an asthma action plan made all the difference for my family and me. The doctors were
+                      patient, compassionate, and truly dedicated to finding a long-term solution for my chronic cough.”
+                    </p>
+                    <h4 class="mb-0">Emily S.</h4>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Slider Controls: Right on Desktop, Centered on Mobile -->
+          <div class="flex items-center justify-center md:justify-end gap-3 mt-6 lg:mt-8">
+            <button type="button" aria-label="Previous Testimonial" class="testimonial-prev testimonial-nav-btn">
+              <i class="ti ti-arrow-left text-[18px]"></i>
+            </button>
+            <button type="button" aria-label="Next Testimonial" class="testimonial-next testimonial-nav-btn">
+              <i class="ti ti-arrow-right text-[18px]"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ==========================================================================
+       PERSONALIZED CARE / CTA SECTION (Your Journey to Better Breathing Starts Today)
+       ========================================================================== -->
+    <section id="cta" class="section-padding relative bg-cover bg-center bg-no-repeat overflow-hidden"
+      style="background-image: url('/images/personalized-care-bg.webp');">
+      <!-- Subtle Gradient Overlay for mobile readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10 lg:to-transparent pointer-events-none">
+      </div>
+
+      <div class="site-container relative z-10 flex justify-center lg:justify-end">
+        <!-- White CTA Box (Strict max-w-[585px] as per Figma, 30px desktop padding) -->
+        <div class="w-full max-w-[585px] bg-white rounded-[5px] p-5 sm:p-6 md:p-[30px] lg:p-[30px] shadow-2xl">
+          <h2 class="mb-4 text-dark font-heading font-bold leading-tight">
+            Your Journey to Better Breathing Starts Today
+          </h2>
+          <p class="text-muted leading-relaxed mb-6 sm:mb-8 text-[15px] sm:text-[16px]">
+            Don't let breathing problems limit your life. Schedule a consultation with our pulmonary specialists and
+            receive personalized care designed around your needs.
+          </p>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <a href="/appointment.html" class="btn-primary w-full sm:w-auto text-center py-3.5 px-7">
+              Book an Appointment
+            </a>
+            <a href="tel:+1234567890"
+              class="btn-secondary w-full sm:w-auto text-center py-3.5 px-7">
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER SECTION
+       ========================================================================== -->
+  <footer id="contact" class="bg-dark-bg text-white pt-8 sm:pt-14 lg:pt-20 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
+    <div class="site-container">
+
+      <!-- Main Footer Grid (Desktop: Brand Column Left with vertical divider touching horizontal border, 3 Columns Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-slate-700/80">
+
+        <!-- Column 1: Brand Info, Logo & Social Icons (4 Cols on Desktop with right border connecting to bottom border) -->
+        <div
+          class="lg:col-span-4 lg:pr-14 border-b border-slate-700/80 lg:border-b-0 lg:border-r border-slate-700/80 pb-6 sm:pb-8 lg:pb-12 flex flex-col justify-between">
+          <div>
+            <a href="/" class="inline-block mb-4 sm:mb-6" aria-label="BreathWell Pulmonary Clinic Home">
+              <img src="/images/site-footer-logo.webp" alt="BreathWell Pulmonary Clinic"
+                class="h-10 sm:h-11 md:h-12 w-auto object-contain" />
+            </a>
+            <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-5 sm:mb-6 max-w-[280px]">
+              Providing compassionate pulmonary care with advanced diagnostics, personalized treatment plans, and
+              long-term respiratory wellness for patients across Phoenix, Arizona.
+            </p>
+          </div>
+
+          <!-- Social Media Icons (Facebook, YouTube, Instagram, X) -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              class="footer-social-icon">
+              <i class="ti ti-brand-facebook text-[18px]"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              class="footer-social-icon">
+              <i class="ti ti-brand-youtube text-[18px]"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="footer-social-icon">
+              <i class="ti ti-brand-instagram text-[18px]"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"
+              class="footer-social-icon">
+              <i class="ti ti-brand-x text-[18px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Columns (8 Cols on Desktop: Adress & Contact, Quick Links, Services) -->
+        <div
+          class="lg:col-span-8 lg:pl-14 pt-6 sm:pt-8 lg:pt-0 pb-8 sm:pb-10 lg:pb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 lg:gap-10">
+
+          <!-- Column 2: Adress & Contact -->
+          <div class="flex flex-col">
+            <!-- Adress Group -->
+            <div class="mb-6 sm:mb-10">
+              <h4 class="footer-heading">Adress</h4>
+              <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-0">
+                Phoenix, Arizona
+              </p>
+            </div>
+
+            <!-- Contact Group -->
+            <div>
+              <h4 class="footer-heading">Contact</h4>
+              <ul class="space-y-3">
+                <li>
+                  <a href="tel:6025550187" class="footer-link">
+                    (602) 555-0187
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@breathwellclinic.com" class="footer-link break-all">
+                    info@breathwellclinic.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 3: Quick Links -->
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="/" class="footer-link">Home</a></li>
+              <li><a href="/about.html" class="footer-link">About</a></li>
+              <li><a href="/service.html" class="footer-link">Service</a></li>
+              <li><a href="/team.html" class="footer-link">Doctors</a></li>
+              <li><a href="/articles.html" class="footer-link">Articles</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Services -->
+          <div>
+            <h4 class="footer-heading">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="/service.html" class="footer-link">Asthma Care</a></li>
+              <li><a href="/#services" class="footer-link">COPD Treatment</a></li>
+              <li><a href="/#services" class="footer-link">Sleep Apnea</a></li>
+              <li><a href="/#services" class="footer-link">Lung Function Testing</a></li>
+              <li><a href="/#services" class="footer-link">Pulmonary Rehabilitation</a></li>
+              <li><a href="/#services" class="footer-link">Smoking Cessation</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Copyright & Legal Links (Directly below border-b line with no gap) -->
+      <div
+        class="pt-4 sm:pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs sm:text-sm text-white">
+        <p class="mb-0 text-white text-xs sm:text-sm">
+          &copy; 2026 KidneyLife Nephrology Center. All Rights Reserved by Protocloud Technologies 2026.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="#privacy"
+            class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Privacy Policy</a>
+          <span class="inline-block w-px h-3.5 bg-slate-500"></span>
+          <a href="#terms" class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Terms
+            and Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vite Script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="/assets/fav-icon-BRS2KYL_.webp" />
+  <title>Contact Us - BreathWell Pulmonary Clinic</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/main-DDDg6fJP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-COiUF8Dr.css">
+</head>
+
+<body class="bg-white text-dark font-sans antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================================================
+       STICKY HEADER WITH SINGLE UNIFIED NAVBAR (Desktop Inline + Mobile Offcanvas)
+       ========================================================================== -->
+  <header id="mainHeader"
+    class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm transition-all duration-300">
+
+    <!-- Mobile Drawer Backdrop Overlay (Inside Header Stacking Context at z-40) -->
+    <div id="navbarBackdrop"
+      class="fixed inset-0 bg-dark-bg/60 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden">
+    </div>
+
+    <!-- Global 1200px Container -->
+    <div class="site-container relative z-50">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- 1. Logo (Left) -->
+        <a href="/" class="flex items-center shrink-0" aria-label="BreathWell Pulmonary Clinic Home">
+          <img src="/assets/site-header-logo-B2GWFEI7.webp" alt="BreathWell Pulmonary Clinic"
+            class="h-10 sm:h-12 w-auto object-contain" />
+        </a>
+
+        <!-- 2. Single Unified Nav Menu (Desktop, Tablet & Mobile) -->
+        <nav id="navbarMenu" class="
+          fixed inset-y-0 right-0 h-full w-[290px] sm:w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-5 sm:p-6 overflow-y-auto
+          lg:static lg:h-auto lg:w-auto lg:max-w-none lg:bg-transparent lg:shadow-none lg:z-auto lg:transform-none lg:transition-none lg:flex-row lg:items-center lg:gap-8 lg:p-0 lg:overflow-visible
+        ">
+
+          <!-- Mobile-Only Drawer Header (Logo + Close Button) -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100 lg:hidden">
+            <img src="/assets/site-header-logo-B2GWFEI7.webp" alt="BreathWell Pulmonary Clinic"
+              class="h-8 sm:h-9 w-auto object-contain" />
+            <button id="closeNavbarBtn" type="button" aria-label="Close Menu"
+              class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 text-muted hover:text-dark flex items-center justify-center transition-colors cursor-pointer">
+              <i class="ti ti-x text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Single Nav Links List (Desktop & Mobile Shared) -->
+          <ul class="flex flex-col lg:flex-row lg:items-center gap-1.5 lg:gap-8 mt-4 mb-2 lg:my-0">
+            <li>
+              <a href="/"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/service.html"
+                class="flex items-center px-3.5 py-2.5 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:p-0 lg:font-sans lg:font-medium lg:text-[16px] transition-colors">
+                Service
+              </a>
+            </li>
+
+            <!-- Pages Dropdown Menu -->
+            <li class="relative group" id="pagesDropdown">
+              <button id="pagesToggleBtn" type="button"
+                class="flex items-center justify-between w-full lg:w-auto px-3.5 py-2.5 lg:p-0 rounded-lg text-[15px] sm:text-[16px] font-heading font-medium text-dark hover:text-primary hover:bg-slate-50 lg:hover:bg-transparent lg:font-sans lg:font-medium lg:text-[16px] gap-1.5 focus:outline-none cursor-pointer transition-colors">
+                <span>Pages</span>
+                <i id="pagesArrow"
+                  class="ti ti-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+
+              <!-- Dropdown Box (Hover on Desktop + Click Toggle) -->
+              <div id="pagesDropdownMenu"
+                class="hidden lg:block lg:invisible lg:opacity-0 lg:translate-y-2 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:absolute lg:top-full lg:left-0 lg:w-48 bg-slate-50 lg:bg-white rounded-lg lg:rounded-xl border border-slate-100 dropdown-shadow py-1.5 px-1 lg:py-2 lg:px-0 mt-1 lg:mt-2 transition-all duration-200 z-50">
+                <a href="/team.html"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Our
+                  Doctors</a>
+                <a href="/#testimonials"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">Testimonials</a>
+                <a href="/#faq"
+                  class="block px-3.5 py-2 lg:px-4 lg:py-2.5 text-sm text-dark hover:bg-lightBlue/60 hover:text-primary rounded-md lg:rounded-none transition-colors">FAQ</a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Mobile-Only Drawer Bottom Button -->
+          <div class="pt-4 mt-2 border-t border-slate-100 lg:hidden">
+            <a href="/contact.html" class="btn-primary w-full text-center py-3 px-6 font-medium shadow-sm">
+              Contact
+            </a>
+          </div>
+
+        </nav>
+
+        <!-- 3. Desktop Action Button & Mobile Hamburger Toggle -->
+        <div class="flex items-center gap-3">
+          <!-- Desktop Contact Button -->
+          <a href="/contact.html" class="hidden lg:inline-flex btn-primary">
+            Contact
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button (lg:hidden) -->
+          <button id="openNavbarBtn" type="button" aria-label="Open Mobile Menu"
+            class="lg:hidden w-10 h-10 rounded-lg bg-lightGray hover:bg-lightBlue text-dark hover:text-primary flex items-center justify-center transition-colors focus:outline-none cursor-pointer">
+            <i class="ti ti-menu-2 text-2xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       INNER HERO / PAGE BANNER SECTION (Exact Figma Design & Centered)
+       ========================================================================== -->
+  <section class="section-padding bg-lightGray overflow-hidden">
+    <div class="site-container text-center">
+
+      <!-- Main Title (We're Here to Help You Breathe Better, Centered) -->
+      <h1 class="text-dark font-heading font-bold mb-0 leading-tight text-center">
+        We're Here to Help You<br class="hidden sm:inline" /> Breathe Better
+      </h1>
+
+      <!-- Description Paragraph (15px margin top/bottom on desktop, 10px on mobile/tab) -->
+      <p
+        class="page-hero-desc text-muted text-[15px] sm:text-[16px] leading-relaxed my-[10px] lg:my-[15px] text-center">
+        Whether you have questions about our services, need assistance with insurance, or want to schedule an
+        appointment, our friendly team is ready to help. Contact us today and take the first step toward better
+        respiratory health.
+      </p>
+
+      <!-- Breadcrumbs with Tabler Icon (Strict Single Centered Horizontal Row) -->
+      <div class="flex items-center justify-center gap-2 text-sm sm:text-base font-medium font-sans text-center">
+        <a href="/" class="text-dark hover:text-primary transition-colors">Home</a>
+        <i class="ti ti-arrow-right text-primary text-sm sm:text-base"></i>
+        <span class="text-primary font-semibold">Contact</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (Contact Page Content Area)
+       ========================================================================== -->
+  <main id="contact-main" class="flex-grow">
+
+    <!-- ==========================================================================
+         REACH OUT TO OUR TEAM / CONTACT FORM SECTION (Exact Figma Design & Responsive)
+         ========================================================================== -->
+    <section class="section-padding bg-white">
+      <div class="site-container">
+
+        <!-- Section Header -->
+        <div class="mb-8 sm:mb-10 lg:mb-12">
+          <h2 class="text-dark font-heading font-bold mb-3 sm:mb-4 leading-tight">
+            Reach Out to Our Team
+          </h2>
+          <p class="text-muted text-[14px] sm:text-[15px] lg:text-[18px] leading-relaxed mb-0">
+            We make it easy to connect with our pulmonary specialists. Call, email, or visit our clinic, and our patient
+            coordinators will assist you with appointments, referrals, insurance verification, and general inquiries.
+          </p>
+        </div>
+
+        <!-- Two-Column Grid: Image Left + Form Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-[30px] items-stretch">
+
+          <!-- Left Feature Image Column (5 Cols on Desktop) -->
+          <div
+            class="w-full lg:col-span-5 h-[340px] sm:h-[420px] lg:h-auto min-h-[320px] rounded-[5px] overflow-hidden flex">
+            <img src="/assets/contact-feature-img-BWEoB3ql.webp"
+              alt="Doctor consulting with patient at BreathWell Pulmonary Clinic"
+              class="w-full h-full object-cover rounded-[5px]" width="482" height="600" />
+          </div>
+
+          <!-- Right Form Card Column (7 Cols on Desktop, Background #F8FAFC, Border #E2E8F0) -->
+          <div
+            class="w-full lg:col-span-7 bg-[#F8FAFC] border border-slate-200/80 rounded-[5px] py-[20px] px-[16px] sm:py-[25px] sm:px-[18px] lg:py-[30px] lg:px-[20px] flex flex-col justify-center shadow-xs">
+            <form id="contactPageForm" class="space-y-4 sm:space-y-5 lg:space-y-6" onsubmit="event.preventDefault();">
+
+              <!-- Row 1: Your Name & Your Email -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+                <div>
+                  <label for="contactName"
+                    class="block font-heading font-medium text-dark text-[16px] sm:text-[18px] lg:text-[20px] mb-2 sm:mb-2.5">
+                    Your Name
+                  </label>
+                  <input type="text" id="contactName" name="name" placeholder="Your Name" required
+                    class="w-full h-[48px] sm:h-[50px] lg:h-[52px] px-4 py-[10px] bg-white border border-slate-200 rounded-[5px] text-dark font-sans text-[15px] sm:text-[16px] placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                </div>
+
+                <div>
+                  <label for="contactEmail"
+                    class="block font-heading font-medium text-dark text-[16px] sm:text-[18px] lg:text-[20px] mb-2 sm:mb-2.5">
+                    Your Email
+                  </label>
+                  <input type="email" id="contactEmail" name="email" placeholder="Your Email" required
+                    class="w-full h-[48px] sm:h-[50px] lg:h-[52px] px-4 py-[10px] bg-white border border-slate-200 rounded-[5px] text-dark font-sans text-[15px] sm:text-[16px] placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                </div>
+              </div>
+
+              <!-- Row 2: Your Phone & Subject -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+                <div>
+                  <label for="contactPhone"
+                    class="block font-heading font-medium text-dark text-[16px] sm:text-[18px] lg:text-[20px] mb-2 sm:mb-2.5">
+                    Your Phone
+                  </label>
+                  <input type="tel" id="contactPhone" name="phone" placeholder="Your Phone"
+                    class="w-full h-[48px] sm:h-[50px] lg:h-[52px] px-4 py-[10px] bg-white border border-slate-200 rounded-[5px] text-dark font-sans text-[15px] sm:text-[16px] placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                </div>
+
+                <div>
+                  <label for="contactSubject"
+                    class="block font-heading font-medium text-dark text-[16px] sm:text-[18px] lg:text-[20px] mb-2 sm:mb-2.5">
+                    Subject
+                  </label>
+                  <input type="text" id="contactSubject" name="subject" placeholder="Subject"
+                    class="w-full h-[48px] sm:h-[50px] lg:h-[52px] px-4 py-[10px] bg-white border border-slate-200 rounded-[5px] text-dark font-sans text-[15px] sm:text-[16px] placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                </div>
+              </div>
+
+              <!-- Row 3: Your Message -->
+              <div>
+                <label for="contactMessage"
+                  class="block font-heading font-medium text-dark text-[16px] sm:text-[18px] lg:text-[20px] mb-2 sm:mb-2.5">
+                  Your Message
+                </label>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Your Message" required
+                  class="w-full min-h-[120px] sm:min-h-[140px] lg:min-h-[150px] p-4 bg-white border border-slate-200 rounded-[5px] text-dark font-sans text-[15px] sm:text-[16px] placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-y"></textarea>
+              </div>
+
+              <!-- Row 4: Submit Button -->
+              <div class="pt-1 sm:pt-2">
+                <button type="submit"
+                  class="btn-primary w-full sm:w-auto py-3.5 px-8 text-center cursor-pointer shadow-sm">
+                  Send Message
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT INFO CARDS SECTION (Visit, Call, Email - No .section-padding Class)
+         ========================================================================== -->
+    <section class="bg-white">
+      <div class="site-container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-[30px]">
+
+          <!-- Card 1: Visit Our Clinic -->
+          <div
+            class="bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-primary/40 rounded-[5px] p-[20px] text-center flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group">
+            <div
+              class="w-14 h-14 rounded-full bg-dark flex items-center justify-center text-white mb-4 sm:mb-5 transition-transform duration-300 group-hover:scale-105">
+              <i class="ti ti-map-pin text-2xl"></i>
+            </div>
+            <h4 class="text-dark font-heading font-bold text-[18px] sm:text-[20px] mb-2 leading-tight">
+              Visit Our Clinic
+            </h4>
+            <p class="text-dark font-medium text-[15px] sm:text-[16px] mb-2">
+              BreathWell Pulmonary Clinic
+            </p>
+            <p class="text-muted text-[14px] sm:text-[15px] leading-relaxed mb-0">
+              1250 East Camelback Road, Suite 220,<br class="hidden sm:inline" /> Phoenix, AZ 85014
+            </p>
+          </div>
+
+          <!-- Card 2: Call Us -->
+          <div
+            class="bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-primary/40 rounded-[5px] p-[20px] text-center flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group">
+            <div
+              class="w-14 h-14 rounded-full bg-dark flex items-center justify-center text-white mb-4 sm:mb-5 transition-transform duration-300 group-hover:scale-105">
+              <i class="ti ti-phone text-2xl"></i>
+            </div>
+            <h4 class="text-dark font-heading font-bold text-[18px] sm:text-[20px] mb-2 leading-tight">
+              Call Us
+            </h4>
+            <a href="tel:6025550187"
+              class="text-dark font-medium text-[15px] sm:text-[16px] mb-2 hover:text-primary transition-colors block">
+              (602) 555-0187
+            </a>
+            <p class="text-muted text-[14px] sm:text-[15px] leading-relaxed mb-0">
+              Monday – Friday<br />8:00 AM – 5:00 PM
+            </p>
+          </div>
+
+          <!-- Card 3: Email Us -->
+          <div
+            class="bg-[#F8FAFC] hover:bg-white border border-slate-200/80 hover:border-primary/40 rounded-[5px] p-[20px] text-center flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group">
+            <div
+              class="w-14 h-14 rounded-full bg-dark flex items-center justify-center text-white mb-4 sm:mb-5 transition-transform duration-300 group-hover:scale-105">
+              <i class="ti ti-mail text-2xl"></i>
+            </div>
+            <h4 class="text-dark font-heading font-bold text-[18px] sm:text-[20px] mb-2 leading-tight">
+              Email Us
+            </h4>
+            <a href="mailto:info@breathwellclinic.com"
+              class="text-dark font-medium text-[15px] sm:text-[16px] mb-2 hover:text-primary transition-colors block">
+              info@breathwellclinic.com
+            </a>
+            <p class="text-muted text-[14px] sm:text-[15px] leading-relaxed mb-0">
+              We'll respond to all inquiries within one business day.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+       FREQUENTLY ASKED QUESTIONS SECTION (Interactive Accordion)
+       ========================================================================== -->
+    <section id="faq" class="section-padding bg-white overflow-hidden">
+      <div class="site-container">
+
+        <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
+
+          <!-- Left Column: Title -->
+          <div class="w-full lg:max-w-[580px] text-center lg:text-left">
+            <h2 class="mb-0 text-dark leading-tight">
+              Frequently Asked<br class="hidden sm:inline" /> Questions
+            </h2>
+          </div>
+
+          <!-- Right Column: Accordion Items (15px gap on desktop, 10px padding per item) -->
+          <div class="flex-1 w-full flex flex-col gap-[15px]">
+
+            <!-- FAQ Item 1 (Active by default as shown in Figma) -->
+            <div class="faq-item active">
+              <button type="button"
+                class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none"
+                aria-expanded="true">
+                <h4 class="faq-question mb-0">Do I need a referral?</h4>
+                <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                  <i class="ti ti-plus faq-icon-plus"></i>
+                  <i class="ti ti-x faq-icon-close"></i>
+                </span>
+              </button>
+              <div class="faq-content px-[10px] pb-[10px]">
+                <p class="text-muted leading-relaxed mb-0">
+                  Some insurance providers require a referral while others allow direct appointments.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+              <button type="button"
+                class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none"
+                aria-expanded="false">
+                <h4 class="faq-question mb-0">How long is the first consultation?</h4>
+                <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                  <i class="ti ti-plus faq-icon-plus"></i>
+                  <i class="ti ti-x faq-icon-close"></i>
+                </span>
+              </button>
+              <div class="faq-content px-[10px] pb-[10px] hidden">
+                <p class="text-muted leading-relaxed mb-0">
+                  Initial pulmonary consultations typically take 45 to 60 minutes to allow thorough evaluation,
+                  diagnostic review, and a personalized care plan discussion.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+              <button type="button"
+                class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none"
+                aria-expanded="false">
+                <h4 class="faq-question mb-0">What should I bring to my appointment?</h4>
+                <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                  <i class="ti ti-plus faq-icon-plus"></i>
+                  <i class="ti ti-x faq-icon-close"></i>
+                </span>
+              </button>
+              <div class="faq-content px-[10px] pb-[10px] hidden">
+                <p class="text-muted leading-relaxed mb-0">
+                  Please bring a valid photo ID, your insurance card, a list of current medications and inhalers, and
+                  any recent chest X-rays, CT scans, or test results.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+              <button type="button"
+                class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none"
+                aria-expanded="false">
+                <h4 class="faq-question mb-0">Do you perform sleep studies?</h4>
+                <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                  <i class="ti ti-plus faq-icon-plus"></i>
+                  <i class="ti ti-x faq-icon-close"></i>
+                </span>
+              </button>
+              <div class="faq-content px-[10px] pb-[10px] hidden">
+                <p class="text-muted leading-relaxed mb-0">
+                  Yes, we offer both comprehensive in-lab polysomnography and convenient at-home sleep apnea testing
+                  with expert interpretation and follow-up care.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+              <button type="button"
+                class="faq-trigger w-full flex items-center justify-between text-left p-[10px] cursor-pointer select-none"
+                aria-expanded="false">
+                <h4 class="faq-question mb-0">Do you offer telehealth visits?</h4>
+                <span class="text-base sm:text-lg text-dark shrink-0 ml-3">
+                  <i class="ti ti-plus faq-icon-plus"></i>
+                  <i class="ti ti-x faq-icon-close"></i>
+                </span>
+              </button>
+              <div class="faq-content px-[10px] pb-[10px] hidden">
+                <p class="text-muted leading-relaxed mb-0">
+                  Yes, we provide secure virtual telehealth consultations for follow-up appointments, routine symptom
+                  check-ins, medication refills, and treatment reviews.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ==========================================================================
+       PERSONALIZED CARE / CTA SECTION (Your Journey to Better Breathing Starts Today)
+       ========================================================================== -->
+    <section id="cta" class="section-padding relative bg-cover bg-center bg-no-repeat overflow-hidden"
+      style="background-image: url('/assets/personalized-care-bg-4rgRz9Q7.webp');">
+      <!-- Subtle Gradient Overlay for mobile readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10 lg:to-transparent pointer-events-none">
+      </div>
+
+      <div class="site-container relative z-10 flex justify-center lg:justify-end">
+        <!-- White CTA Box (Strict max-w-[585px] as per Figma, 30px desktop padding) -->
+        <div class="w-full max-w-[585px] bg-white rounded-[5px] p-5 sm:p-6 md:p-[30px] lg:p-[30px] shadow-2xl">
+          <h2 class="mb-4 text-dark font-heading font-bold leading-tight">
+            Your Journey to Better Breathing Starts Today
+          </h2>
+          <p class="text-muted leading-relaxed mb-6 sm:mb-8 text-[15px] sm:text-[16px]">
+            Don't let breathing problems limit your life. Schedule a consultation with our pulmonary specialists and
+            receive personalized care designed around your needs.
+          </p>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <a href="/appointment.html" class="btn-primary w-full sm:w-auto text-center py-3.5 px-7">
+              Book an Appointment
+            </a>
+            <a href="tel:+1234567890" class="btn-secondary w-full sm:w-auto text-center py-3.5 px-7">
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER SECTION
+       ========================================================================== -->
+  <footer id="contact" class="bg-dark-bg text-white pt-8 sm:pt-14 lg:pt-20 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
+    <div class="site-container">
+
+      <!-- Main Footer Grid (Desktop: Brand Column Left with vertical divider touching horizontal border, 3 Columns Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-slate-700/80">
+
+        <!-- Left Brand Column (4 Cols on Desktop, Touching horizontal bottom border) -->
+        <div
+          class="lg:col-span-4 lg:pr-14 border-b border-slate-700/80 lg:border-b-0 lg:border-r border-slate-700/80 pb-6 sm:pb-8 lg:pb-12 flex flex-col justify-between">
+          <div>
+            <!-- Logo -->
+            <a href="/" class="inline-block mb-4 sm:mb-6" aria-label="BreathWell Clinic Home">
+              <img src="/assets/site-footer-logo-DXTalYLY.webp" alt="BreathWell Pulmonary Clinic"
+                class="h-10 sm:h-12 w-auto object-contain brightness-0 invert" />
+            </a>
+
+            <!-- Clinic Mission Statement -->
+            <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-5 sm:mb-8 max-w-sm">
+              Dedicated to delivering compassionate, comprehensive pulmonary care with advanced treatments and
+              patient-first medicine.
+            </p>
+          </div>
+
+          <!-- Social Links (4 Icons: Facebook, Twitter/X, LinkedIn, Instagram) -->
+          <div class="flex items-center gap-2.5">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              class="footer-social-icon">
+              <i class="ti ti-brand-facebook text-[18px]"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+              class="footer-social-icon">
+              <i class="ti ti-brand-twitter text-[18px]"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+              class="footer-social-icon">
+              <i class="ti ti-brand-linkedin text-[18px]"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              class="footer-social-icon">
+              <i class="ti ti-brand-instagram text-[18px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Columns (8 Cols on Desktop: Adress & Contact, Quick Links, Services) -->
+        <div
+          class="lg:col-span-8 lg:pl-14 pt-6 sm:pt-8 lg:pt-0 pb-8 sm:pb-10 lg:pb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 lg:gap-10">
+
+          <!-- Column 2: Adress & Contact -->
+          <div class="flex flex-col">
+            <!-- Adress Group -->
+            <div class="mb-6 sm:mb-10">
+              <h4 class="footer-heading">Adress</h4>
+              <p class="text-white text-[14px] sm:text-[15px] leading-relaxed mb-0">
+                Phoenix, Arizona
+              </p>
+            </div>
+
+            <!-- Contact Group -->
+            <div>
+              <h4 class="footer-heading">Contact</h4>
+              <ul class="space-y-3">
+                <li>
+                  <a href="tel:6025550187" class="footer-link">
+                    (602) 555-0187
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@breathwellclinic.com" class="footer-link break-all">
+                    info@breathwellclinic.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 3: Quick Links -->
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="/" class="footer-link">Home</a></li>
+              <li><a href="/about.html" class="footer-link">About</a></li>
+              <li><a href="/service.html" class="footer-link">Service</a></li>
+              <li><a href="/team.html" class="footer-link">Doctors</a></li>
+              <li><a href="/articles.html" class="footer-link">Articles</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Services -->
+          <div>
+            <h4 class="footer-heading">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="/service.html" class="footer-link">Asthma Care</a></li>
+              <li><a href="/service.html" class="footer-link">COPD Treatment</a></li>
+              <li><a href="/service.html" class="footer-link">Sleep Apnea</a></li>
+              <li><a href="/service.html" class="footer-link">Lung Function Testing</a></li>
+              <li><a href="/service.html" class="footer-link">Pulmonary Rehabilitation</a></li>
+              <li><a href="/service.html" class="footer-link">Smoking Cessation</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Copyright & Legal Links (Directly below border-b line with no gap) -->
+      <div
+        class="pt-4 sm:pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs sm:text-sm text-white">
+        <p class="mb-0 text-white text-xs sm:text-sm">
+          &copy; 2026 KidneyLife Nephrology Center. All Rights Reserved by Protocloud Technologies 2026.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="#privacy"
+            class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Privacy Policy</a>
+          <span class="inline-block w-px h-3.5 bg-slate-500"></span>
+          <a href="#terms" class="text-white hover:text-primary transition-colors duration-200 text-xs sm:text-sm">Terms
+            and Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vite Script -->
+</body>
+
+</html>
